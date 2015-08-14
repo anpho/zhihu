@@ -1,10 +1,78 @@
+/*
+ * all rights reserved anpho@bbdev.cn
+ */
 import bb.cascades 1.4
 import bb.data 1.0
 import cn.anpho 1.0
 NavigationPane {
     id: navigationPane
-
+    Menu.definition: MenuDefinition {
+        helpAction: HelpActionItem {
+            onTriggered: {
+                navigationPane.push(aboutpage.createObject())
+            }
+            attachedObjects: ComponentDefinition {
+                source: "about.qml"
+                id: aboutpage
+            }
+        }
+    }
     Page {
+        property int currentdate: + Qt.formatDate(new Date(), "yyyyMMdd")
+        property bool loading: false
+        function load() {
+            if (loading) return;
+            loading = true;
+            var b4date = (currentdate) + '';
+            var endpoint = "http://news.at.zhihu.com/api/4/news/before/%1".arg(b4date)
+            ds.source = endpoint;
+            ds.load();
+        }
+        attachedObjects: Common {
+            id: co
+        }
+        titleBar: TitleBar {
+            kind: TitleBarKind.FreeForm
+            kindProperties: FreeFormTitleBarKindProperties {
+                Container {
+                    topPadding: 10.0
+
+                    leftPadding: 20.0
+                    bottomPadding: 10.0
+                    rightPadding: 20.0
+                    layout: StackLayout {
+                        orientation: LayoutOrientation.LeftToRight
+
+                    }
+                    ImageView {
+                        imageSource: "asset:///image/logo.png"
+                        scalingMethod: ScalingMethod.AspectFit
+                    }
+                    Container {
+                        visible: toppage.loading
+                        layoutProperties: StackLayoutProperties {
+                            spaceQuota: 1.0
+
+                        }
+                        verticalAlignment: VerticalAlignment.Center
+                        layout: StackLayout {
+                            orientation: LayoutOrientation.RightToLeft
+
+                        }
+                        ActivityIndicator {
+                            running: true
+                            horizontalAlignment: HorizontalAlignment.Right
+                        }
+                        Label {
+                            text: qsTr("Loading")
+                        }
+                    }
+
+                }
+            }
+            scrollBehavior: TitleBarScrollBehavior.NonSticky
+
+        }
         id: toppage
         onCreationCompleted: {
             ds.load()
@@ -32,8 +100,24 @@ NavigationPane {
             listItemComponents: [
                 ListItemComponent {
                     type: "header"
-                    Header {
-                        title: ListItemData.title
+                    Container {
+                        Container {
+                            background: Color.create("#ff0da3d7")
+                            horizontalAlignment: HorizontalAlignment.Left
+                            verticalAlignment: VerticalAlignment.Center
+                            leftPadding: 40.0
+                            rightPadding: 40.0
+                            topPadding: 20.0
+                            bottomPadding: 20.0
+                            Label {
+                                text: ListItemData.title
+                                textStyle.color: Color.White
+                            }
+                        }
+                        Divider {
+                            horizontalAlignment: HorizontalAlignment.Fill
+
+                        }
                     }
                 },
                 ListItemComponent {
@@ -50,21 +134,21 @@ NavigationPane {
 
                         }
                         horizontalAlignment: HorizontalAlignment.Fill
-                        leftPadding: 40.0
+                        leftPadding: 50.0
                         rightPadding: 40.0
                         topMargin: 40.0
                         bottomMargin: 40.0
                         WebImageView {
                             id: webimage
                             verticalAlignment: VerticalAlignment.Center
-                            horizontalAlignment: HorizontalAlignment.Fill
                             scalingMethod: ScalingMethod.AspectFill
                             url: ListItemData.images[0]
                             enabled: ListItemData.images[0]
-                            attachedObjects: LayoutUpdateHandler {
-                                onLayoutFrameChanged: {
-                                    webimage.preferredHeight = layoutFrame.width
-                                }
+                            preferredHeight: ui.du(15)
+                            preferredWidth: ui.du(15)
+                            layoutProperties: StackLayoutProperties {
+                                spaceQuota: 1.0
+
                             }
                         }
                         Label {
@@ -75,6 +159,10 @@ NavigationPane {
                             horizontalAlignment: HorizontalAlignment.Fill
                             verticalAlignment: VerticalAlignment.Center
                             text: ListItemData.title
+                            textStyle.fontSize: FontSize.Medium
+                            layoutProperties: StackLayoutProperties {
+                                spaceQuota: 5.0
+                            }
                         }
                     }
                 }
@@ -92,18 +180,28 @@ NavigationPane {
                                     "header": true,
                                     "title": data.date
                                 })
+                            toppage.currentdate = + data.date;
                         }
                         if (data.stories) {
                             adm.append(data.stories)
                         }
+                        toppage.loading = false
                     }
                     onError: {
-
+                        toppage.loading = false
+                        console.log(errorMessage)
                     }
                 },
                 ComponentDefinition {
                     id: webv
                     source: "webviewer.qml"
+                },
+                ListScrollStateHandler {
+                    onAtEndChanged: {
+                        if (atEnd && ! toppage.loading) {
+                            toppage.load();
+                        }
+                    }
                 }
             ]
         }

@@ -18,7 +18,7 @@
 #define ApplicationUI_HPP_
 
 #include <QObject>
-
+#include <QSettings>
 namespace bb
 {
     namespace cascades
@@ -39,9 +39,14 @@ class ApplicationUI : public QObject
     Q_OBJECT
 public:
     ApplicationUI();
-    virtual ~ApplicationUI() {}
+    virtual ~ApplicationUI() {};
+    Q_INVOKABLE QString getv(const QString &objectName, const QString &defaultValue);
+    Q_INVOKABLE void setv(const QString &objectName, const QString &inputValue);
+    Q_INVOKABLE void shareURL(QString text);
 private slots:
     void onSystemLanguageChanged();
+    void onArmed();
+    void onFinished();
 private:
     QTranslator* m_pTranslator;
     bb::cascades::LocaleHandler* m_pLocaleHandler;

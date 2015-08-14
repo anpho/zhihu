@@ -1,3 +1,6 @@
+/*
+ * all rights reserved anpho@bbdev.cn
+ */
 import bb.cascades 1.2
 
 QtObject {
@@ -47,4 +50,15 @@ QtObject {
         console.log("[QML]Common.qml loaded.")
     }
 
+    function parse (str) {
+        // validate year as 4 digits, month as 01-12, and day as 01-31 
+        if ((str = str.match (/^(\d{4})(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])$/))) {
+            // make a date
+            str[0] = new Date (+str[1], +str[2] - 1, +str[3]);
+            // check if month stayed the same (ie that day number is valid)
+            if (str[0].getMonth () === +str[2] - 1)
+                return str[0];
+        }
+        return undefined;
+    }
 }

@@ -26,7 +26,7 @@
 
     <!-- A universally unique application identifier. Must be unique across all BlackBerry 10 applications.
          Using a reverse DNS-style name as the id is recommended. (Eg. com.example.ExampleApplication.) Required. -->
-    <id>cn.bbdev.ZhihuDaily</id>
+    <id>anpho.zhihu.daily</id>
     <configuration name="Device-Debug">
        <platformArchitecture>armle-v7</platformArchitecture>
        <asset path="arm/o.le-v7-g/ZhihuDaily" entry="true" type="Qnx/Elf">ZhihuDaily</asset>
@@ -47,7 +47,10 @@
 
     <!-- The name that is displayed in the BlackBerry 10 application installer.
          May have multiple values for each language. See samples or xsd schema file. Optional. -->
-    <name>ZhihuDaily</name>
+    <name>
+       Zhihu Daily
+       <text xml:lang="zh-CN">&#x77e5;&#x4e4e;&#x65e5;&#x62a5;</text>
+    </name>
 
     <!-- A string value of the format <0-999>.<0-999>.<0-999> that represents application version which can be used to check for application upgrade.
          Values can also be 1-part or 2-part. It is not necessary to have a 3-part value.
@@ -57,18 +60,22 @@
     <!-- Fourth digit segment of the package version. First three segments are taken from the
          <versionNumber> element.  Must be an integer from 0 to 2^16-1 -->
     <buildId>1</buildId>
+    <packageLocale>zh-CN</packageLocale>
 
     <!-- A string value (such as "v1", "2.5", or "Alpha 1") that represents the version of the application, as it should be shown to users. Optional. -->
     <!-- <versionLabel></versionLabel> -->
 
     <!-- Description, displayed in the BlackBerry 10 application installer.
          May have multiple values for each language. See samples or xsd schema file. Optional. -->
-    <description>The ZhihuDaily application</description>
 
     <!-- Copyright information. Optional. -->
     <!-- <copyright></copyright> -->
 
     <!--  Name of author which is used for signing. Must match the developer name of your development certificate. -->
+    <description>
+       ZhiHu Daily Magzine
+       <text xml:lang="zh-CN">&#x77e5;&#x4e4e;&#x65e5;&#x62a5;&#x73b0;&#x5df2;&#x4f7f;&#x7528;Cascades&#x91cd;&#x5236;&#xff01;</text>
+    </description>
     <authorId>gYAAgMy-I-SFJtVvioZxVXYQjhA</authorId>
     <author>anpho</author>
 
@@ -96,6 +103,7 @@
     <!-- Request permission to execute native code.  Required for native applications. -->
     <permission system="true">run_native</permission>
     <permission>access_internet</permission>
+    <permission>access_shared</permission>
     <env var="LD_LIBRARY_PATH" value="app/native/lib:/usr/lib/qt4/lib"/>
 
 </qnx>

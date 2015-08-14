@@ -37,6 +37,22 @@ simulator {
 config_pri_assets {
     OTHER_FILES += \
         $$quote($$BASEDIR/assets/Common.qml) \
+        $$quote($$BASEDIR/assets/VisualStyle.Bright/custom.css) \
+        $$quote($$BASEDIR/assets/VisualStyle.Dark/custom.css) \
+        $$quote($$BASEDIR/assets/VisualStyle.Dark/image/logo.png) \
+        $$quote($$BASEDIR/assets/about.qml) \
+        $$quote($$BASEDIR/assets/custom.css) \
+        $$quote($$BASEDIR/assets/icon/ic_browser.png) \
+        $$quote($$BASEDIR/assets/icon/ic_decrease.png) \
+        $$quote($$BASEDIR/assets/icon/ic_increase.png) \
+        $$quote($$BASEDIR/assets/icon/ic_open.png) \
+        $$quote($$BASEDIR/assets/icon/ic_reload.png) \
+        $$quote($$BASEDIR/assets/icon/ic_share.png) \
+        $$quote($$BASEDIR/assets/icon/ic_zoom_in.png) \
+        $$quote($$BASEDIR/assets/icon/ic_zoom_out.png) \
+        $$quote($$BASEDIR/assets/image/dim.amd) \
+        $$quote($$BASEDIR/assets/image/dim.png) \
+        $$quote($$BASEDIR/assets/image/logo.png) \
         $$quote($$BASEDIR/assets/main.qml) \
         $$quote($$BASEDIR/assets/webviewer.qml)
 }
@@ -65,7 +81,22 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../src/*.cxx) \
         $$quote($$BASEDIR/../assets/*.qml) \
         $$quote($$BASEDIR/../assets/*.js) \
-        $$quote($$BASEDIR/../assets/*.qs)
+        $$quote($$BASEDIR/../assets/*.qs) \
+        $$quote($$BASEDIR/../assets/VisualStyle.Bright/*.qml) \
+        $$quote($$BASEDIR/../assets/VisualStyle.Bright/*.js) \
+        $$quote($$BASEDIR/../assets/VisualStyle.Bright/*.qs) \
+        $$quote($$BASEDIR/../assets/VisualStyle.Dark/*.qml) \
+        $$quote($$BASEDIR/../assets/VisualStyle.Dark/*.js) \
+        $$quote($$BASEDIR/../assets/VisualStyle.Dark/*.qs) \
+        $$quote($$BASEDIR/../assets/VisualStyle.Dark/image/*.qml) \
+        $$quote($$BASEDIR/../assets/VisualStyle.Dark/image/*.js) \
+        $$quote($$BASEDIR/../assets/VisualStyle.Dark/image/*.qs) \
+        $$quote($$BASEDIR/../assets/icon/*.qml) \
+        $$quote($$BASEDIR/../assets/icon/*.js) \
+        $$quote($$BASEDIR/../assets/icon/*.qs) \
+        $$quote($$BASEDIR/../assets/image/*.qml) \
+        $$quote($$BASEDIR/../assets/image/*.js) \
+        $$quote($$BASEDIR/../assets/image/*.qs)
 
     HEADERS += \
         $$quote($$BASEDIR/../src/*.h) \
@@ -75,4 +106,5 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../src/*.hxx)
 }
 
-TRANSLATIONS = $$quote($${TARGET}.ts)
+TRANSLATIONS = $$quote($${TARGET}_zh_CN.ts) \
+    $$quote($${TARGET}.ts)

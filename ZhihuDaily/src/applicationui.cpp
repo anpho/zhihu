@@ -20,7 +20,8 @@
 #include <bb/cascades/QmlDocument>
 #include <bb/cascades/AbstractPane>
 #include <bb/cascades/LocaleHandler>
-
+#include <bb/cascades/InvokeQuery>
+#include <bb/cascades/Invocation>
 using namespace bb::cascades;
 
 ApplicationUI::ApplicationUI() :
@@ -43,7 +44,7 @@ ApplicationUI::ApplicationUI() :
     // Create scene document from main.qml asset, the parent is set
     // to ensure the document gets destroyed properly at shut down.
     QmlDocument *qml = QmlDocument::create("asset:///main.qml").parent(this);
-
+    qml->setContextProperty("_app",this);
     // Create root object for the UI
     AbstractPane *root = qml->createRootObject<AbstractPane>();
 
@@ -60,4 +61,43 @@ void ApplicationUI::onSystemLanguageChanged()
     if (m_pTranslator->load(file_name, "app/native/qm")) {
         QCoreApplication::instance()->installTranslator(m_pTranslator);
     }
+}
+QString ApplicationUI::getv(const QString &objectName, const QString &defaultValue)
+{
+    QSettings settings;
+    if (settings.value(objectName).isNull()) {
+        qDebug()<<"[SETTINGS]" << objectName << " is "<<defaultValue;
+        return defaultValue;
+    }
+    qDebug()<<"[SETTINGS]" << objectName << " is "<<settings.value(objectName).toString();
+    return settings.value(objectName).toString();
+}
+
+void ApplicationUI::setv(const QString &objectName, const QString &inputValue)
+{
+    QSettings settings;
+    settings.setValue(objectName, QVariant(inputValue));
+    qDebug() << "[SETTINGS]" << objectName << " set to " << inputValue;
+}
+
+
+void ApplicationUI::shareURL(QString text)
+{
+    InvokeQuery *query = InvokeQuery::create().uri(text);
+    Invocation *invocation = Invocation::create(query);
+    query->setParent(invocation); // destroy query with invocation
+    invocation->setParent(this); // app can be destroyed before onFinished() is called
+    connect(invocation, SIGNAL(armed()), this, SLOT(onArmed()));
+    connect(invocation, SIGNAL(finished()), this, SLOT(onFinished()));
+}
+
+void ApplicationUI::onArmed()
+{
+    Invocation *invocation = qobject_cast<Invocation *>(sender());
+    invocation->trigger("bb.action.SHARE");
+}
+void ApplicationUI::onFinished()
+{
+    Invocation *invocation = qobject_cast<Invocation *>(sender());
+    invocation->deleteLater();
 }
