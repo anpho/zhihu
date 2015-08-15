@@ -40,8 +40,8 @@ class ApplicationUI : public QObject
 public:
     ApplicationUI();
     virtual ~ApplicationUI() {};
-    Q_INVOKABLE QString getv(const QString &objectName, const QString &defaultValue);
-    Q_INVOKABLE void setv(const QString &objectName, const QString &inputValue);
+     Q_INVOKABLE QString getv(const QString &objectName, const QString &defaultValue);
+     Q_INVOKABLE void setv(const QString &objectName, const QString &inputValue);
     Q_INVOKABLE void shareURL(QString text);
 private slots:
     void onSystemLanguageChanged();

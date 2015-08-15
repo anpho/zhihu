@@ -54,6 +54,10 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/image/dim.png) \
         $$quote($$BASEDIR/assets/image/logo.png) \
         $$quote($$BASEDIR/assets/main.qml) \
+        $$quote($$BASEDIR/assets/splash/1280x720.png) \
+        $$quote($$BASEDIR/assets/splash/1280x768.png) \
+        $$quote($$BASEDIR/assets/splash/1440x1440.png) \
+        $$quote($$BASEDIR/assets/splash/720x720.png) \
         $$quote($$BASEDIR/assets/webviewer.qml)
 }
 
@@ -67,6 +71,8 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/WebImageView.h) \
         $$quote($$BASEDIR/src/applicationui.hpp)
 }
+
+INCLUDEPATH += $$quote($$BASEDIR/src)
 
 CONFIG += precompile_header
 
@@ -96,7 +102,10 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/icon/*.qs) \
         $$quote($$BASEDIR/../assets/image/*.qml) \
         $$quote($$BASEDIR/../assets/image/*.js) \
-        $$quote($$BASEDIR/../assets/image/*.qs)
+        $$quote($$BASEDIR/../assets/image/*.qs) \
+        $$quote($$BASEDIR/../assets/splash/*.qml) \
+        $$quote($$BASEDIR/../assets/splash/*.js) \
+        $$quote($$BASEDIR/../assets/splash/*.qs)
 
     HEADERS += \
         $$quote($$BASEDIR/../src/*.h) \

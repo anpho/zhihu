@@ -47,9 +47,14 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../assets/main.qml" line="67"/>
+        <location filename="../assets/main.qml" line="76"/>
         <source>Loading</source>
         <translation>加载中</translation>
+    </message>
+    <message>
+        <location filename="../assets/main.qml" line="110"/>
+        <source>ZhiHu Daily</source>
+        <translation>知乎日报</translation>
     </message>
 </context>
 <context>

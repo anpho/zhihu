@@ -47,6 +47,14 @@ NavigationPane {
                     ImageView {
                         imageSource: "asset:///image/logo.png"
                         scalingMethod: ScalingMethod.AspectFit
+                        gestureHandlers: TapHandler {
+                            onTapped: {
+                                adm.clear()
+                                ds.abort();
+                                ds.source = "http://news-at.zhihu.com/api/4/news/latest";
+                                ds.load()
+                            }
+                        }
                     }
                     Container {
                         visible: toppage.loading
@@ -59,6 +67,7 @@ NavigationPane {
                             orientation: LayoutOrientation.RightToLeft
 
                         }
+
                         ActivityIndicator {
                             running: true
                             horizontalAlignment: HorizontalAlignment.Right
@@ -67,10 +76,38 @@ NavigationPane {
                             text: qsTr("Loading")
                         }
                     }
+                    Container {
+                        verticalAlignment: VerticalAlignment.Center
+                        horizontalAlignment: HorizontalAlignment.Fill
+                        layoutProperties: StackLayoutProperties {
+                            spaceQuota: 0.2
+                        }
+                        layout: StackLayout {
+                            orientation: LayoutOrientation.RightToLeft
+                        }
+                        CheckBox {
+                            checked: Application.themeSupport.theme.colorTheme.style === VisualStyle.Dark
+                            onCheckedChanged: {
+                                _app.setv("use_dark_theme", checked ? "dark" : "bright");
+                                try {
+                                    Application.themeSupport.setVisualStyle(checked ? VisualStyle.Dark : VisualStyle.Bright);
+                                } catch (e) {
 
+                                }
+                            }
+                            verticalAlignment: VerticalAlignment.Center
+                            horizontalAlignment: HorizontalAlignment.Right
+                            id: themecheckbox
+                        }
+                        Label {
+                            text: themecheckbox.checked ? String.fromCharCode(0x263d) : String.fromCharCode(0x263c)
+                            verticalAlignment: VerticalAlignment.Center
+                        }
+                    }
                 }
             }
             scrollBehavior: TitleBarScrollBehavior.NonSticky
+            title: qsTr("ZhiHu Daily")
 
         }
         id: toppage
@@ -82,13 +119,8 @@ NavigationPane {
                 id: adm
             }
             scrollIndicatorMode: ScrollIndicatorMode.ProportionalBar
-            snapMode: SnapMode.LeadingEdge
-            layout: GridListLayout {
-                columnCount: 1
-                headerMode: ListHeaderMode.Sticky
-                horizontalCellSpacing: 15.0
-                verticalCellSpacing: 15.0
-            }
+            snapMode: SnapMode.Default
+
             function itemType(data, indexPath) {
                 return (data.header ? 'header' : 'item');
             }
@@ -185,7 +217,7 @@ NavigationPane {
                         if (data.stories) {
                             adm.append(data.stories)
                         }
-                        toppage.loading = false
+                        toppage.loading = false;
                     }
                     onError: {
                         toppage.loading = false
@@ -197,13 +229,15 @@ NavigationPane {
                     source: "webviewer.qml"
                 },
                 ListScrollStateHandler {
-                    onAtEndChanged: {
-                        if (atEnd && ! toppage.loading) {
+                    id: lss
+                    onScrollingChanged: {
+                        if (scrolling && lss.atEnd && ! toppage.loading) {
                             toppage.load();
                         }
                     }
                 }
             ]
+            bufferedScrollingEnabled: true
         }
     }
 

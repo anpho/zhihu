@@ -1,5 +1,5 @@
 1
-19
+23
 about.qml
 Common.qml
 custom.css
@@ -15,6 +15,10 @@ image/dim.amd
 image/dim.png
 image/logo.png
 main.qml
+splash/1280x720.png
+splash/1280x768.png
+splash/1440x1440.png
+splash/720x720.png
 VisualStyle.Bright/custom.css
 VisualStyle.Dark/custom.css
 VisualStyle.Dark/image/logo.png

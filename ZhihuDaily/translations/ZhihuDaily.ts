@@ -42,6 +42,10 @@
         <source>Loading</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>ZhiHu Daily</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>webviewer</name>

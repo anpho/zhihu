@@ -59,7 +59,7 @@
 
     <!-- Fourth digit segment of the package version. First three segments are taken from the
          <versionNumber> element.  Must be an integer from 0 to 2^16-1 -->
-    <buildId>1</buildId>
+    <buildId>2</buildId>
     <packageLocale>zh-CN</packageLocale>
 
     <!-- A string value (such as "v1", "2.5", or "Alpha 1") that represents the version of the application, as it should be shown to users. Optional. -->
@@ -76,6 +76,12 @@
        ZhiHu Daily Magzine
        <text xml:lang="zh-CN">&#x77e5;&#x4e4e;&#x65e5;&#x62a5;&#x73b0;&#x5df2;&#x4f7f;&#x7528;Cascades&#x91cd;&#x5236;&#xff01;</text>
     </description>
+    <splashScreens>
+       <image>1280x720.png</image>
+       <image>1280x768.png</image>
+       <image>1440x1440.png</image>
+       <image>720x720.png</image>
+    </splashScreens>
     <authorId>gYAAgMy-I-SFJtVvioZxVXYQjhA</authorId>
     <author>anpho</author>
 
@@ -99,6 +105,10 @@
     <asset path="translations" dest="qm">
         <include name="*.qm"/>
     </asset>
+    <asset path="assets/splash/1280x720.png">1280x720.png</asset>
+    <asset path="assets/splash/1280x768.png">1280x768.png</asset>
+    <asset path="assets/splash/1440x1440.png">1440x1440.png</asset>
+    <asset path="assets/splash/720x720.png">720x720.png</asset>
 
     <!-- Request permission to execute native code.  Required for native applications. -->
     <permission system="true">run_native</permission>

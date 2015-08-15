@@ -27,6 +27,12 @@ using namespace bb::cascades;
 
 Q_DECL_EXPORT int main(int argc, char **argv)
 {
+    QSettings settings;
+    if (!settings.value("use_dark_theme").isNull()) {
+        qDebug() << "[SETTINGS]use_dark_theme is " << settings.value("use_dark_theme").toString();
+        qputenv("CASCADES_THEME", settings.value("use_dark_theme").toString().toUtf8());
+    }
+
     qmlRegisterType<WebImageView>("cn.anpho", 1, 0, "WebImageView");
     Application app(argc, argv);
     // Create the Application UI object, this is where the main.qml file
