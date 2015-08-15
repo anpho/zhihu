@@ -8,5 +8,4 @@ BlackBerry World链接： [访问](https://appworld.blackberry.com/webstore/cont
 
 ### Author 
 
-[Merrick Zhang](anpho@bbdev.cn)
-
+Merrick Zhang / anpho@bbdev.cn 
