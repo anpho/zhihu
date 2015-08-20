@@ -1,0 +1,3 @@
+.global-header , .header-for-mobile ,.header-for-mobile-download-link, .bottom-wrap , .qr, .content-inner>.question:nth-child(2) {
+	display: none !important;
+}

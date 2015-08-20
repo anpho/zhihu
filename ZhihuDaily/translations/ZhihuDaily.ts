@@ -39,22 +39,18 @@
 <context>
     <name>main</name>
     <message>
-        <source>Loading</source>
+        <source>Time Machine</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>ZhiHu Daily</source>
+        <source>Jump To</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>webviewer</name>
+    <name>webviewEx</name>
     <message>
         <source>Zoom -</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Share</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -63,6 +59,10 @@
     </message>
     <message>
         <source>Zoom Reset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Share</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

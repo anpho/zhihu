@@ -37,16 +37,16 @@ simulator {
 config_pri_assets {
     OTHER_FILES += \
         $$quote($$BASEDIR/assets/Common.qml) \
-        $$quote($$BASEDIR/assets/VisualStyle.Bright/custom.css) \
-        $$quote($$BASEDIR/assets/VisualStyle.Dark/custom.css) \
         $$quote($$BASEDIR/assets/VisualStyle.Dark/image/logo.png) \
         $$quote($$BASEDIR/assets/about.qml) \
-        $$quote($$BASEDIR/assets/custom.css) \
+        $$quote($$BASEDIR/assets/ad.css) \
         $$quote($$BASEDIR/assets/icon/ic_browser.png) \
         $$quote($$BASEDIR/assets/icon/ic_decrease.png) \
+        $$quote($$BASEDIR/assets/icon/ic_done.png) \
         $$quote($$BASEDIR/assets/icon/ic_increase.png) \
         $$quote($$BASEDIR/assets/icon/ic_open.png) \
         $$quote($$BASEDIR/assets/icon/ic_reload.png) \
+        $$quote($$BASEDIR/assets/icon/ic_resume.png) \
         $$quote($$BASEDIR/assets/icon/ic_share.png) \
         $$quote($$BASEDIR/assets/icon/ic_zoom_in.png) \
         $$quote($$BASEDIR/assets/icon/ic_zoom_out.png) \
@@ -54,11 +54,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/image/dim.png) \
         $$quote($$BASEDIR/assets/image/logo.png) \
         $$quote($$BASEDIR/assets/main.qml) \
-        $$quote($$BASEDIR/assets/splash/1280x720.png) \
-        $$quote($$BASEDIR/assets/splash/1280x768.png) \
-        $$quote($$BASEDIR/assets/splash/1440x1440.png) \
-        $$quote($$BASEDIR/assets/splash/720x720.png) \
-        $$quote($$BASEDIR/assets/webviewer.qml)
+        $$quote($$BASEDIR/assets/webviewEx.qml)
 }
 
 config_pri_source_group1 {
@@ -71,8 +67,6 @@ config_pri_source_group1 {
         $$quote($$BASEDIR/src/WebImageView.h) \
         $$quote($$BASEDIR/src/applicationui.hpp)
 }
-
-INCLUDEPATH += $$quote($$BASEDIR/src)
 
 CONFIG += precompile_header
 
@@ -88,9 +82,6 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/*.qml) \
         $$quote($$BASEDIR/../assets/*.js) \
         $$quote($$BASEDIR/../assets/*.qs) \
-        $$quote($$BASEDIR/../assets/VisualStyle.Bright/*.qml) \
-        $$quote($$BASEDIR/../assets/VisualStyle.Bright/*.js) \
-        $$quote($$BASEDIR/../assets/VisualStyle.Bright/*.qs) \
         $$quote($$BASEDIR/../assets/VisualStyle.Dark/*.qml) \
         $$quote($$BASEDIR/../assets/VisualStyle.Dark/*.js) \
         $$quote($$BASEDIR/../assets/VisualStyle.Dark/*.qs) \
@@ -102,10 +93,7 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/icon/*.qs) \
         $$quote($$BASEDIR/../assets/image/*.qml) \
         $$quote($$BASEDIR/../assets/image/*.js) \
-        $$quote($$BASEDIR/../assets/image/*.qs) \
-        $$quote($$BASEDIR/../assets/splash/*.qml) \
-        $$quote($$BASEDIR/../assets/splash/*.js) \
-        $$quote($$BASEDIR/../assets/splash/*.qs)
+        $$quote($$BASEDIR/../assets/image/*.qs)
 
     HEADERS += \
         $$quote($$BASEDIR/../src/*.h) \

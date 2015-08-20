@@ -47,42 +47,73 @@
 <context>
     <name>main</name>
     <message>
-        <location filename="../assets/main.qml" line="76"/>
         <source>Loading</source>
-        <translation>加载中</translation>
+        <translation type="obsolete">加载中</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="110"/>
         <source>ZhiHu Daily</source>
-        <translation>知乎日报</translation>
+        <translation type="obsolete">知乎日报</translation>
+    </message>
+    <message>
+        <location filename="../assets/main.qml" line="259"/>
+        <source>Time Machine</source>
+        <translation>时光机</translation>
+    </message>
+    <message>
+        <location filename="../assets/main.qml" line="307"/>
+        <source>Jump To</source>
+        <translation>时光</translation>
+    </message>
+</context>
+<context>
+    <name>webviewEx</name>
+    <message>
+        <location filename="../assets/webviewEx.qml" line="80"/>
+        <source>Zoom -</source>
+        <translation>缩小</translation>
+    </message>
+    <message>
+        <location filename="../assets/webviewEx.qml" line="89"/>
+        <source>Zoom +</source>
+        <translation>放大</translation>
+    </message>
+    <message>
+        <location filename="../assets/webviewEx.qml" line="97"/>
+        <source>Zoom Reset</source>
+        <translation>还原缩放级别</translation>
+    </message>
+    <message>
+        <location filename="../assets/webviewEx.qml" line="105"/>
+        <source>Share</source>
+        <translation>共享网址</translation>
+    </message>
+    <message>
+        <location filename="../assets/webviewEx.qml" line="113"/>
+        <source>Open in Browser</source>
+        <translation>在浏览器中打开</translation>
     </message>
 </context>
 <context>
     <name>webviewer</name>
     <message>
-        <location filename="../assets/webviewer.qml" line="156"/>
         <source>Zoom -</source>
-        <translation>缩小</translation>
+        <translation type="obsolete">缩小</translation>
     </message>
     <message>
-        <location filename="../assets/webviewer.qml" line="165"/>
         <source>Zoom +</source>
-        <translation>放大</translation>
+        <translation type="obsolete">放大</translation>
     </message>
     <message>
-        <location filename="../assets/webviewer.qml" line="173"/>
         <source>Zoom Reset</source>
-        <translation>还原缩放级别</translation>
+        <translation type="obsolete">还原缩放级别</translation>
     </message>
     <message>
-        <location filename="../assets/webviewer.qml" line="181"/>
         <source>Share</source>
-        <translation>共享网址</translation>
+        <translation type="obsolete">共享网址</translation>
     </message>
     <message>
-        <location filename="../assets/webviewer.qml" line="189"/>
         <source>Open in Browser</source>
-        <translation>在浏览器中打开</translation>
+        <translation type="obsolete">在浏览器中打开</translation>
     </message>
 </context>
 </TS>
