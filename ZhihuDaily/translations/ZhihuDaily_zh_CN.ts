@@ -68,27 +68,27 @@
 <context>
     <name>webviewEx</name>
     <message>
-        <location filename="../assets/webviewEx.qml" line="80"/>
+        <location filename="../assets/webviewEx.qml" line="117"/>
         <source>Zoom -</source>
         <translation>缩小</translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="89"/>
+        <location filename="../assets/webviewEx.qml" line="126"/>
         <source>Zoom +</source>
         <translation>放大</translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="97"/>
+        <location filename="../assets/webviewEx.qml" line="134"/>
         <source>Zoom Reset</source>
         <translation>还原缩放级别</translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="105"/>
+        <location filename="../assets/webviewEx.qml" line="142"/>
         <source>Share</source>
         <translation>共享网址</translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="113"/>
+        <location filename="../assets/webviewEx.qml" line="150"/>
         <source>Open in Browser</source>
         <translation>在浏览器中打开</translation>
     </message>
