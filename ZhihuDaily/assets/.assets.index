@@ -1,8 +1,10 @@
 1
-20
+22
 about.qml
 ad.css
 Common.qml
+HistoryDiag.qml
+icon/icon_211.png
 icon/ic_browser.png
 icon/ic_decrease.png
 icon/ic_done.png
@@ -18,5 +20,5 @@ image/dim.amd
 image/dim.png
 image/logo.png
 main.qml
-VisualStyle.Dark/image/logo.png
+VisualStyle.Dark/ad.css
 webviewEx.qml

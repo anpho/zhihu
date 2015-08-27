@@ -17,6 +17,16 @@ NavigationPane {
                 id: aboutpage
             }
         }
+        actions: ActionItem {
+            title: qsTr("Theme")
+            onTriggered: {
+                var isDarkNow = (Application.themeSupport.theme.colorTheme.style === VisualStyle.Dark);
+                var newtheme = ! isDarkNow;
+                _app.setv("use_dark_theme", newtheme ? "dark" : "bright");
+                Application.themeSupport.setVisualStyle(newtheme ? VisualStyle.Dark : VisualStyle.Bright);
+            }
+            imageSource: "asset:///icon/icon_211.png"
+        }
     }
     Page {
         property bool showTimeMachinePanel: false
@@ -320,5 +330,12 @@ NavigationPane {
     onPopTransitionEnded: {
         page.destroy();
         lv.scrollRole = ScrollRole.Main
+
+        if (top == toppage) {
+            Application.menuEnabled = true
+        }
+    }
+    onPushTransitionEnded: {
+        Application.menuEnabled = false
     }
 }

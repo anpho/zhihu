@@ -2,6 +2,21 @@
 <!DOCTYPE TS>
 <TS version="2.0">
 <context>
+    <name>HistoryDiag</name>
+    <message>
+        <source>Time Machine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose a date to navigate to.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GO</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>about</name>
     <message>
         <source>Re-built with BlackBerry Cascades</source>
@@ -46,6 +61,10 @@
         <source>Jump To</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Theme</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>webviewEx</name>
@@ -55,10 +74,6 @@
     </message>
     <message>
         <source>Zoom +</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Zoom Reset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

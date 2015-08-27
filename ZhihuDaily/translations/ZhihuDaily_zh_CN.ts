@@ -2,6 +2,24 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="zh_CN">
 <context>
+    <name>HistoryDiag</name>
+    <message>
+        <location filename="../assets/HistoryDiag.qml" line="10"/>
+        <source>Time Machine</source>
+        <translation>时光机</translation>
+    </message>
+    <message>
+        <location filename="../assets/HistoryDiag.qml" line="13"/>
+        <source>Choose a date to navigate to.</source>
+        <translation>选择要前往的日期</translation>
+    </message>
+    <message>
+        <location filename="../assets/HistoryDiag.qml" line="19"/>
+        <source>GO</source>
+        <translation>出发</translation>
+    </message>
+</context>
+<context>
     <name>about</name>
     <message>
         <location filename="../assets/about.qml" line="22"/>
@@ -55,12 +73,17 @@
         <translation type="obsolete">知乎日报</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="259"/>
+        <location filename="../assets/main.qml" line="21"/>
+        <source>Theme</source>
+        <translation>主题切换</translation>
+    </message>
+    <message>
+        <location filename="../assets/main.qml" line="269"/>
         <source>Time Machine</source>
         <translation>时光机</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="307"/>
+        <location filename="../assets/main.qml" line="317"/>
         <source>Jump To</source>
         <translation>时光</translation>
     </message>
@@ -68,27 +91,26 @@
 <context>
     <name>webviewEx</name>
     <message>
-        <location filename="../assets/webviewEx.qml" line="117"/>
+        <location filename="../assets/webviewEx.qml" line="110"/>
         <source>Zoom -</source>
         <translation>缩小</translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="126"/>
+        <location filename="../assets/webviewEx.qml" line="120"/>
         <source>Zoom +</source>
         <translation>放大</translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="134"/>
         <source>Zoom Reset</source>
-        <translation>还原缩放级别</translation>
+        <translation type="obsolete">还原缩放级别</translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="142"/>
+        <location filename="../assets/webviewEx.qml" line="130"/>
         <source>Share</source>
         <translation>共享网址</translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="150"/>
+        <location filename="../assets/webviewEx.qml" line="138"/>
         <source>Open in Browser</source>
         <translation>在浏览器中打开</translation>
     </message>

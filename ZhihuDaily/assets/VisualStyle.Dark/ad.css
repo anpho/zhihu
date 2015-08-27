@@ -1,0 +1,66 @@
+.global-header , .header-for-mobile ,.header-for-mobile-download-link, .bottom-wrap , .qr{
+	display: none !important;
+}
+
+/*, .content-inner>.question:nth-child(2) */
+
+@namespace"http://www.w3.org/1999/xhtml";
+html {
+	background:#111!important
+}
+html * {
+	background-color:#111 /*!important*/;
+	color:#bbb!important;
+	border-color:#111!important;
+	border-width:0!important
+}
+html a, html a * {
+	color:#5c8599!important;
+/*	text-decoration:underline!important */
+}
+html a:visited, html a:visited *, html a:active, html a:active * {
+	color:#525f66!important
+}
+html a:hover, html a:hover * {
+	color:#cef!important;
+	background:#023!important
+}
+html input, html select, html button, html textarea {
+	background:#4d4c40!important;
+	border:1px solid #5c5a46!important;
+	border-top-color:#474531!important;
+	border-bottom-color:#7a7967!important
+}
+html input[type=button], html input[type=submit], html input[type=reset], html input[type=image], html button {
+	border-top-color:#7a7967!important;
+	border-bottom-color:#474531!important
+}
+html input:focus, html select:focus, html option:focus, html button:focus, html textarea:focus {
+	background:#5c5b3e!important;
+	color:#fff!important;
+	border-color:#474100 #665d00 #7a7849!important;
+	outline:2px solid #041d29!important
+}
+html input[type=button]:focus, html input[type=submit]:focus, html input[type=reset]:focus, html input[type=image]:focus, html button:focus {
+	border-color:#7a7849 #665d00 #474100!important
+}
+html input[type=radio] {
+	background:none!important;
+	border-color:#111!important;
+	border-width:0!important
+}
+
+@media all and (-webkit-min-device-pixel-ratio:0) {
+	html body * {
+		-webkit-transition:color 0 ease-in, background-color 0 ease-out!important
+	}
+	html a, html textarea, html input, html select {
+		-webkit-transition:color 0 ease-in, background-color 0 ease-out!important
+	}
+	html img[src], html input[type=image] {
+		-webkit-transition:opacity 0 ease-in!important
+	}
+	html input:focus, html select:focus, html option:focus, html button:focus, html textarea:focus {
+		outline-style:outset!important
+	}
+}

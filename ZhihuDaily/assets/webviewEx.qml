@@ -16,12 +16,14 @@ Page {
         }
         scrview.scrollRole = ScrollRole.Main
     }
+    property string changeFontSize: "var a=document.createElement('style');a.innerHTML='.content { font-size: %1px }';document.head.appendChild(a);"
+    property int fontsize: _app.getv("fontsize", webv.settings.defaultFontSize)
+    onFontsizeChanged: {
+        _app.setv("fontsize", fontsize)
+    }
+
     property string id
     property bool loading: false
-    property double deviceRatio: parseFloat(_app.getv('ratio', '4.0'))
-    onDeviceRatioChanged: {
-        _app.setv("ratio", deviceRatio);
-    }
     onIdChanged: {
         if (! loading) {
             loading = true;
@@ -61,7 +63,7 @@ Page {
             scrollViewProperties.scrollMode: scrview.contentScale > 1 ? ScrollMode.Both : ScrollMode.Vertical
             WebView {
                 id: webv
-                opacity: 0
+                visible: false
                 horizontalAlignment: HorizontalAlignment.Fill
                 settings.userStyleSheetLocation: "ad.css"
                 settings.userAgent: "Mozilla/5.0 (Linux; U; Android 2.2; en-us; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
@@ -72,7 +74,12 @@ Page {
                     }
                 }
                 preferredHeight: Infinity
-                settings.devicePixelRatio: deviceRatio
+                onLoadingChanged: {
+                    if (! loading) {
+                        webv.evaluateJavaScript(changeFontSize.arg(fontsize))
+                        visible=true
+                    }
+                }
                 //            settings.viewport: { "initial-scale" : 1.0 }
                 onMinContentScaleChanged: {
                     scrview.scrollViewProperties.minContentScale = minContentScale;
@@ -80,21 +87,7 @@ Page {
                 onMaxContentScaleChanged: {
                     scrview.scrollViewProperties.maxContentScale = maxContentScale;
                 }
-                // FIX #8
-                onLoadProgressChanged: {
-                    if (loadProgress > 90 && ! playingFadeTrans) {
-                        playingFadeTrans = true;
-                        showwebv.play()
-                    }
-                }
-                property bool playingFadeTrans: false
-                attachedObjects: FadeTransition {
-                    id: showwebv
-                    target: webv
-                    toOpacity: 1
-                    fromOpacity: 0
-                    duration: 300
-                }
+                settings.webInspectorEnabled: true
             }
         }
         Container {
@@ -105,7 +98,7 @@ Page {
                 toValue: 100
             }
             horizontalAlignment: HorizontalAlignment.Fill
-            verticalAlignment: VerticalAlignment.Center
+            verticalAlignment: VerticalAlignment.Top
         }
 
     }
@@ -116,9 +109,10 @@ Page {
         ActionItem {
             title: qsTr("Zoom -")
             ActionBar.placement: ActionBarPlacement.OnBar
-            enabled: deviceRatio > 1.0
             onTriggered: {
-                deviceRatio = deviceRatio - 0.5
+                var newsize = Math.max(12, fontsize - 2)
+                webv.evaluateJavaScript(changeFontSize.arg(newsize))
+                fontsize = newsize;
             }
             imageSource: "asset:///icon/ic_zoom_out.png"
         },
@@ -126,17 +120,11 @@ Page {
             title: qsTr("Zoom +")
             ActionBar.placement: ActionBarPlacement.OnBar
             onTriggered: {
-                deviceRatio = deviceRatio + 0.5
+                var newsize = Math.min(28, fontsize + 2)
+                webv.evaluateJavaScript(changeFontSize.arg(newsize))
+                fontsize = newsize;
             }
             imageSource: "asset:///icon/ic_zoom_in.png"
-        },
-        ActionItem {
-            title: qsTr("Zoom Reset")
-            ActionBar.placement: ActionBarPlacement.InOverflow
-            onTriggered: {
-                deviceRatio = 4.0
-            }
-            imageSource: "asset:///icon/ic_reload.png"
         },
         ActionItem {
             title: qsTr("Share")
