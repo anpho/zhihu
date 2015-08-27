@@ -50,6 +50,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/icon/ic_share.png) \
         $$quote($$BASEDIR/assets/icon/ic_zoom_in.png) \
         $$quote($$BASEDIR/assets/icon/ic_zoom_out.png) \
+        $$quote($$BASEDIR/assets/image/bg.png) \
         $$quote($$BASEDIR/assets/image/dim.amd) \
         $$quote($$BASEDIR/assets/image/dim.png) \
         $$quote($$BASEDIR/assets/image/logo.png) \

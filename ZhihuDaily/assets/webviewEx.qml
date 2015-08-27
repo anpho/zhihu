@@ -41,40 +41,77 @@ Page {
                 }
             }, [], false)
     }
-    ScrollView {
-        id: scrview
-        horizontalAlignment: HorizontalAlignment.Fill
-        verticalAlignment: VerticalAlignment.Fill
-        scrollViewProperties.pinchToZoomEnabled: true
-        scrollViewProperties.scrollMode: ScrollMode.Both
-        onContentScaleChanged: {
+    Container {
+        layout: DockLayout {
+
         }
-        WebView {
-            id: webv
+        ImageView {
+            imageSource: "asset:///image/bg.png"
+            scalingMethod: ScalingMethod.AspectFill
+            verticalAlignment: VerticalAlignment.Fill
             horizontalAlignment: HorizontalAlignment.Fill
-            settings.webInspectorEnabled: true
-            settings.userStyleSheetLocation: "ad.css"
-            settings.userAgent: "Mozilla/5.0 (Linux; U; Android 2.2; en-us; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
-            onNavigationRequested: {
-                if (request.navigationType == WebNavigationType.OpenWindow || request.navigationType == WebNavigationType.LinkClicked) {
-                    request.action = WebNavigationRequestAction.Ignore
-                    Qt.openUrlExternally(request.url)
+        }
+        ScrollView {
+
+            id: scrview
+            horizontalAlignment: HorizontalAlignment.Fill
+            verticalAlignment: VerticalAlignment.Fill
+            scrollViewProperties.pinchToZoomEnabled: true
+            // FIX #7 , won't scroll when content doesn't zoomed.
+            scrollViewProperties.scrollMode: scrview.contentScale > 1 ? ScrollMode.Both : ScrollMode.Vertical
+            WebView {
+                id: webv
+                opacity: 0
+                horizontalAlignment: HorizontalAlignment.Fill
+                settings.userStyleSheetLocation: "ad.css"
+                settings.userAgent: "Mozilla/5.0 (Linux; U; Android 2.2; en-us; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
+                onNavigationRequested: {
+                    if (request.navigationType == WebNavigationType.OpenWindow || request.navigationType == WebNavigationType.LinkClicked) {
+                        request.action = WebNavigationRequestAction.Ignore
+                        Qt.openUrlExternally(request.url)
+                    }
+                }
+                preferredHeight: Infinity
+                settings.devicePixelRatio: deviceRatio
+                //            settings.viewport: { "initial-scale" : 1.0 }
+                onMinContentScaleChanged: {
+                    scrview.scrollViewProperties.minContentScale = minContentScale;
+                }
+                onMaxContentScaleChanged: {
+                    scrview.scrollViewProperties.maxContentScale = maxContentScale;
+                }
+                // FIX #8
+                onLoadProgressChanged: {
+                    if (loadProgress > 90 && ! playingFadeTrans) {
+                        playingFadeTrans = true;
+                        showwebv.play()
+                    }
+                }
+                property bool playingFadeTrans: false
+                attachedObjects: FadeTransition {
+                    id: showwebv
+                    target: webv
+                    toOpacity: 1
+                    fromOpacity: 0
+                    duration: 300
                 }
             }
-            settings.devicePixelRatio: deviceRatio
-//            settings.viewport: { "initial-scale" : 1.0 }
-            onMinContentScaleChanged: {
-                scrview.scrollViewProperties.minContentScale = minContentScale;
-            }
-            onMaxContentScaleChanged: {
-                scrview.scrollViewProperties.maxContentScale = maxContentScale;
-            }
         }
+        Container {
+            visible: webv.loading
+            ProgressIndicator {
+                value: webv.loadProgress
+                fromValue: 0
+                toValue: 100
+            }
+            horizontalAlignment: HorizontalAlignment.Fill
+            verticalAlignment: VerticalAlignment.Center
+        }
+
     }
-    
     actionBarAutoHideBehavior: ActionBarAutoHideBehavior.HideOnScroll
     actionBarVisibility: ChromeVisibility.Overlay
-    
+
     actions: [
         ActionItem {
             title: qsTr("Zoom -")

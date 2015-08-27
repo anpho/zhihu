@@ -1,5 +1,5 @@
 1
-19
+20
 about.qml
 ad.css
 Common.qml
@@ -13,6 +13,7 @@ icon/ic_resume.png
 icon/ic_share.png
 icon/ic_zoom_in.png
 icon/ic_zoom_out.png
+image/bg.png
 image/dim.amd
 image/dim.png
 image/logo.png

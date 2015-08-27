@@ -313,7 +313,8 @@ NavigationPane {
             }
         ]
         actionBarAutoHideBehavior: ActionBarAutoHideBehavior.HideOnScroll
-        actionBarVisibility: showTimeMachinePanel ? ChromeVisibility.Visible : ChromeVisibility.Compact
+        actionBarVisibility: ChromeVisibility.Compact
+
     }
 
     onPopTransitionEnded: {
