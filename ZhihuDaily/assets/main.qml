@@ -336,6 +336,9 @@ NavigationPane {
         }
     }
     onPushTransitionEnded: {
-        Application.menuEnabled = false
+        // FIX #12
+        if (top != toppage){
+            Application.menuEnabled = false    
+        }
     }
 }
