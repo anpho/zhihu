@@ -260,7 +260,12 @@ NavigationPane {
             }
             Container {
                 visible: toppage.showTimeMachinePanel
-                verticalAlignment: VerticalAlignment.Bottom
+                onVisibleChanged: {
+                    if (visible) {
+                        dt.expanded = true;
+                    }
+                }
+                verticalAlignment: VerticalAlignment.Fill
                 horizontalAlignment: HorizontalAlignment.Fill
                 background: ui.palette.background
                 topPadding: 20.0
@@ -269,21 +274,12 @@ NavigationPane {
                     title: qsTr("Time Machine")
                 }
                 Container {
-                    layout: StackLayout {
-                        orientation: LayoutOrientation.LeftToRight
-
-                    }
-                    leftPadding: 40.0
-                    rightPadding: 40.0
-                    topPadding: 20.0
-                    Button {
-                        imageSource: "asset:///icon/ic_resume.png"
-                        preferredWidth: 1.0
-                        appearance: ControlAppearance.Primary
-                        verticalAlignment: VerticalAlignment.Center
-                        onClicked: {
-                            dt.value = new Date();
-                        }
+                    leftPadding: 20
+                    rightPadding: leftPadding
+                    topPadding: leftPadding
+                    bottomPadding: leftPadding
+                    Label {
+                        text: qsTr("Use this feature to navigate back in time.")
                     }
                     DateTimePicker {
                         id: dt
@@ -292,10 +288,35 @@ NavigationPane {
                         verticalAlignment: VerticalAlignment.Center
                         minimum: new Date("2013/05/19")
                         enabled: true
+                        title: qsTr("Date")
+                        expanded: true
+                    }
+                }
+
+                Container {
+                    layout: StackLayout {
+                        orientation: LayoutOrientation.LeftToRight
+
+                    }
+                    leftPadding: 20.0
+                    rightPadding: 20.0
+                    topPadding: 20.0
+                    horizontalAlignment: HorizontalAlignment.Fill
+                    Button {
+                        imageSource: "asset:///icon/ic_resume.png"
+                        appearance: ControlAppearance.Primary
+                        verticalAlignment: VerticalAlignment.Center
+                        onClicked: {
+                            dt.value = new Date();
+                        }
+                        text: qsTr("Back to Today")
+                        horizontalAlignment: HorizontalAlignment.Center
+                        layoutProperties: StackLayoutProperties {
+                            spaceQuota: 1.0
+                        }
                     }
                     Button {
                         imageSource: "asset:///icon/ic_done.png"
-                        preferredWidth: 1.0
                         appearance: ControlAppearance.Primary
                         verticalAlignment: VerticalAlignment.Center
                         onClicked: {
@@ -307,9 +328,14 @@ NavigationPane {
                             toppage.load();
                             toppage.showTimeMachinePanel = false;
                         }
+                        text: qsTr("Go!")
+                        horizontalAlignment: HorizontalAlignment.Center
+                        layoutProperties: StackLayoutProperties {
+                            spaceQuota: 1.0
+                        }
                     }
-                }
 
+                }
             }
         }
         actions: [
@@ -323,18 +349,15 @@ NavigationPane {
             }
         ]
         actionBarAutoHideBehavior: ActionBarAutoHideBehavior.HideOnScroll
-        actionBarVisibility: ChromeVisibility.Compact
+        actionBarVisibility: ChromeVisibility.Overlay
 
     }
 
     onPopTransitionEnded: {
         page.destroy();
-        lv.scrollRole = ScrollRole.Main
-
         if (top == toppage) {
             Application.menuEnabled = true
-            // FIX ACTION-BAR VISIBLITY ISSUE WHEN BACK FROM ARTICLE
-            toppage.actionBarVisibility = ChromeVisibility.Compact
+            lv.scrollRole = ScrollRole.Main
         }
     }
     onPushTransitionEnded: {

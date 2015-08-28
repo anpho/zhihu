@@ -65,6 +65,22 @@
         <source>Theme</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Use this feature to navigate back in time.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Date</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Back to Today</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Go!</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>webviewEx</name>

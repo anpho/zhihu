@@ -27,12 +27,12 @@ Page {
                 title: qsTr("AUTHOR")
             }
             Label {
-                text: "Merrick Zhang / <a href='mailto:anpho@bbdev.cn'>anpho@bbdev.cn</a>"
+                text: "Merrick Zhang ( anpho@bbdev.cn )"
                 horizontalAlignment: HorizontalAlignment.Center
                 textFormat: TextFormat.Html
             }
             Label {
-                text: "<a href='http://bbdev.cn'>BBDev.CN</a>"
+                text: "<a href='http://bbdev.cn'>BBDev.CN Official Website</a>"
                 textFormat: TextFormat.Html
                 horizontalAlignment: HorizontalAlignment.Center
             }
