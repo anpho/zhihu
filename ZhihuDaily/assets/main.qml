@@ -333,12 +333,14 @@ NavigationPane {
 
         if (top == toppage) {
             Application.menuEnabled = true
+            // FIX ACTION-BAR VISIBLITY ISSUE WHEN BACK FROM ARTICLE
+            toppage.actionBarVisibility = ChromeVisibility.Compact
         }
     }
     onPushTransitionEnded: {
         // FIX #12
-        if (top != toppage){
-            Application.menuEnabled = false    
+        if (top != toppage) {
+            Application.menuEnabled = false
         }
     }
 }
