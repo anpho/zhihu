@@ -85,22 +85,22 @@
     <message>
         <location filename="../assets/main.qml" line="282"/>
         <source>Use this feature to navigate back in time.</source>
-        <translation type="unfinished"></translation>
+        <translation>使用时光机来查阅往期杂志</translation>
     </message>
     <message>
         <location filename="../assets/main.qml" line="291"/>
         <source>Date</source>
-        <translation type="unfinished"></translation>
+        <translation>日期</translation>
     </message>
     <message>
         <location filename="../assets/main.qml" line="312"/>
         <source>Back to Today</source>
-        <translation type="unfinished"></translation>
+        <translation>今天</translation>
     </message>
     <message>
         <location filename="../assets/main.qml" line="331"/>
         <source>Go!</source>
-        <translation type="unfinished"></translation>
+        <translation>出发</translation>
     </message>
     <message>
         <location filename="../assets/main.qml" line="343"/>
