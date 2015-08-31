@@ -36,6 +36,13 @@ Page {
                 textFormat: TextFormat.Html
                 horizontalAlignment: HorizontalAlignment.Center
             }
+            Label {
+                text: qsTr("Please DON'T email me for bug report or feature request, use the links below.")
+                multiline: true
+                textStyle.textAlign: TextAlign.Center
+                horizontalAlignment: HorizontalAlignment.Fill
+                textFormat: TextFormat.Html
+            }
             Header {
                 title: qsTr("CONTRIBUTE")
             }

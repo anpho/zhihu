@@ -255,7 +255,7 @@ NavigationPane {
                 layout: GridListLayout {
                     columnCount: lv.columnsInGrid
                     headerMode: ListHeaderMode.None
-                    cellAspectRatio: lv.columnsInGrid == 1 ? 16 / 9 : 1
+                    cellAspectRatio: lv.columnsInGrid == 1 ? 16 / 5 : 1
                 }
             }
             Container {
@@ -340,12 +340,12 @@ NavigationPane {
         }
         actions: [
             ActionItem {
-                title: qsTr("Jump To")
+                title: qsTr("Time Machine")
                 ActionBar.placement: ActionBarPlacement.Signature
                 onTriggered: {
                     toppage.showTimeMachinePanel = ! toppage.showTimeMachinePanel;
                 }
-                imageSource: "asset:///icon/ic_browser.png"
+                imageSource: "asset:///icon/ic_history.png"
             }
         ]
         actionBarAutoHideBehavior: ActionBarAutoHideBehavior.HideOnScroll

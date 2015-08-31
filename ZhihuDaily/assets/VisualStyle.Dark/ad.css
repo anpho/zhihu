@@ -8,6 +8,9 @@
 html {
 	background:#111!important
 }
+.footer {
+	background-color:#111 !important;
+}
 html * {
 	background-color:#111 /*!important*/;
 	color:#bbb!important;

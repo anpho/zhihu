@@ -2,21 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.0">
 <context>
-    <name>HistoryDiag</name>
-    <message>
-        <source>Time Machine</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Choose a date to navigate to.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>GO</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>about</name>
     <message>
         <source>Re-built with BlackBerry Cascades</source>
@@ -50,15 +35,15 @@
         <source>Please make donations to support my development, my paypal/alipay account is : &lt;u&gt;anphorea@gmail.com&lt;/u&gt; , Thank you !</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Please DON&apos;T email me for bug report or feature request, use the links below.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>main</name>
     <message>
         <source>Time Machine</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Jump To</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -79,6 +64,17 @@
     </message>
     <message>
         <source>Go!</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>settings</name>
+    <message>
+        <source>Visual Style</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Dark Theme</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

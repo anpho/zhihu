@@ -54,7 +54,6 @@ Page {
             horizontalAlignment: HorizontalAlignment.Fill
         }
         ScrollView {
-
             id: scrview
             horizontalAlignment: HorizontalAlignment.Fill
             verticalAlignment: VerticalAlignment.Fill
@@ -63,7 +62,6 @@ Page {
             scrollViewProperties.scrollMode: scrview.contentScale > 1 ? ScrollMode.Both : ScrollMode.Vertical
             WebView {
                 id: webv
-                visible: false
                 horizontalAlignment: HorizontalAlignment.Fill
                 settings.userStyleSheetLocation: "ad.css"
                 settings.userAgent: "Mozilla/5.0 (Linux; U; Android 2.2; en-us; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
@@ -73,11 +71,9 @@ Page {
                         Qt.openUrlExternally(request.url)
                     }
                 }
-                preferredHeight: Infinity
                 onLoadingChanged: {
                     if (! loading) {
                         webv.evaluateJavaScript(changeFontSize.arg(fontsize))
-                        visible=true
                     }
                 }
                 //            settings.viewport: { "initial-scale" : 1.0 }

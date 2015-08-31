@@ -37,13 +37,13 @@ simulator {
 config_pri_assets {
     OTHER_FILES += \
         $$quote($$BASEDIR/assets/Common.qml) \
-        $$quote($$BASEDIR/assets/HistoryDiag.qml) \
         $$quote($$BASEDIR/assets/VisualStyle.Dark/ad.css) \
         $$quote($$BASEDIR/assets/about.qml) \
         $$quote($$BASEDIR/assets/ad.css) \
         $$quote($$BASEDIR/assets/icon/ic_browser.png) \
         $$quote($$BASEDIR/assets/icon/ic_decrease.png) \
         $$quote($$BASEDIR/assets/icon/ic_done.png) \
+        $$quote($$BASEDIR/assets/icon/ic_history.png) \
         $$quote($$BASEDIR/assets/icon/ic_increase.png) \
         $$quote($$BASEDIR/assets/icon/ic_open.png) \
         $$quote($$BASEDIR/assets/icon/ic_reload.png) \
@@ -57,6 +57,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/image/dim.png) \
         $$quote($$BASEDIR/assets/image/logo.png) \
         $$quote($$BASEDIR/assets/main.qml) \
+        $$quote($$BASEDIR/assets/settings.qml) \
         $$quote($$BASEDIR/assets/webviewEx.qml)
 }
 
