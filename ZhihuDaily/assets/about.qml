@@ -4,6 +4,9 @@
 import bb.cascades 1.4
 
 Page {
+    actionBarAutoHideBehavior: ActionBarAutoHideBehavior.Disabled
+    actionBarVisibility: ChromeVisibility.Compact
+    property variant nav
     ScrollView {
         Container {
             horizontalAlignment: HorizontalAlignment.Fill
@@ -32,9 +35,19 @@ Page {
                 textFormat: TextFormat.Html
             }
             Label {
-                text: "<a href='http://bbdev.cn'>BBDev.CN Official Website</a>"
+                text: "BBDev.CN" + String.fromCharCode(0x2197)
                 textFormat: TextFormat.Html
                 horizontalAlignment: HorizontalAlignment.Center
+                gestureHandlers: TapHandler {
+                    onTapped: {
+                        var target_url = "http://bbdev.cn";
+                        var webv = Qt.createComponent("webviewer.qml").createObject(nav);
+                        webv.nav = nav;
+                        webv.uri = target_url;
+                        nav.push(webv);
+                    }
+                }
+                textStyle.color: ui.palette.primary
             }
             Label {
                 text: qsTr("Please DON'T email me for bug report or feature request, use the links below.")
@@ -51,14 +64,34 @@ Page {
                 horizontalAlignment: HorizontalAlignment.Center
             }
             Label {
-                text: qsTr("<a href='https://github.com/BBDev-CN/zhihu'>Project on Github</a>")
+                text: qsTr("Project on Github") + String.fromCharCode(0x2197)
                 textFormat: TextFormat.Html
                 horizontalAlignment: HorizontalAlignment.Center
+                gestureHandlers: TapHandler {
+                    onTapped: {
+                        var target_url = "http://github.com/BBDev-CN/zhihu";
+                        var webv = Qt.createComponent("webviewer.qml").createObject(nav);
+                        webv.nav = nav;
+                        webv.uri = target_url;
+                        nav.push(webv);
+                    }
+                }
+                textStyle.color: ui.palette.primary
             }
             Label {
-                text: qsTr("<a href='https://github.com/BBDev-CN/zhihu/issues'>Issues / Bug Report</a>")
+                text: qsTr("Issues / Bug Report") + String.fromCharCode(0x2197)
                 textFormat: TextFormat.Html
                 horizontalAlignment: HorizontalAlignment.Center
+                gestureHandlers: TapHandler {
+                    onTapped: {
+                        var target_url = "https://github.com/BBDev-CN/zhihu/issues";
+                        var webv = Qt.createComponent("webviewer.qml").createObject(nav);
+                        webv.nav = nav;
+                        webv.uri = target_url;
+                        nav.push(webv);
+                    }
+                }
+                textStyle.color: ui.palette.primary
             }
             Header {
                 title: qsTr("DONATE")

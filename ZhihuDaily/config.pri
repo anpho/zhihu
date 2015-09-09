@@ -43,6 +43,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/icon/ic_browser.png) \
         $$quote($$BASEDIR/assets/icon/ic_decrease.png) \
         $$quote($$BASEDIR/assets/icon/ic_done.png) \
+        $$quote($$BASEDIR/assets/icon/ic_edit_bookmarks.png) \
         $$quote($$BASEDIR/assets/icon/ic_history.png) \
         $$quote($$BASEDIR/assets/icon/ic_increase.png) \
         $$quote($$BASEDIR/assets/icon/ic_open.png) \
@@ -58,7 +59,8 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/image/logo.png) \
         $$quote($$BASEDIR/assets/main.qml) \
         $$quote($$BASEDIR/assets/settings.qml) \
-        $$quote($$BASEDIR/assets/webviewEx.qml)
+        $$quote($$BASEDIR/assets/webviewEx.qml) \
+        $$quote($$BASEDIR/assets/webviewer.qml)
 }
 
 config_pri_source_group1 {

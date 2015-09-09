@@ -10,7 +10,9 @@ NavigationPane {
     Menu.definition: MenuDefinition {
         helpAction: HelpActionItem {
             onTriggered: {
-                navigationPane.push(aboutpage.createObject())
+                var about_page_obj = aboutpage.createObject();
+                about_page_obj.nav = navigationPane;
+                navigationPane.push(about_page_obj);
             }
             attachedObjects: ComponentDefinition {
                 source: "about.qml"
@@ -90,6 +92,7 @@ NavigationPane {
                 }
                 function requestView(id) {
                     var page = webv.createObject(navigationPane);
+                    page.nav = navigationPane;
                     page.id = id;
                     navigationPane.push(page);
                 }

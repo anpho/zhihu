@@ -20,14 +20,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;a href=&apos;https://github.com/BBDev-CN/zhihu&apos;&gt;Project on Github&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;a href=&apos;https://github.com/BBDev-CN/zhihu/issues&apos;&gt;Issues / Bug Report&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>DONATE</source>
         <translation type="unfinished"></translation>
     </message>
@@ -37,6 +29,14 @@
     </message>
     <message>
         <source>Please DON&apos;T email me for bug report or feature request, use the links below.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Project on Github</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Issues / Bug Report</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -64,6 +64,10 @@
     </message>
     <message>
         <source>Go!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Review</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -94,6 +98,13 @@
     </message>
     <message>
         <source>Open in Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>webviewer</name>
+    <message>
+        <source>Open in browser</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

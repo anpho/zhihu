@@ -1,6 +1,7 @@
 import bb.cascades 1.4
 import bb.system 1.2
 Page {
+    property variant nav
     attachedObjects: [
         Common {
             id: co
@@ -68,7 +69,10 @@ Page {
                 onNavigationRequested: {
                     if (request.navigationType == WebNavigationType.OpenWindow || request.navigationType == WebNavigationType.LinkClicked) {
                         request.action = WebNavigationRequestAction.Ignore
-                        Qt.openUrlExternally(request.url)
+                        var newWebPageView = Qt.createComponent("webviewer.qml").createObject(nav);
+                        newWebPageView.nav = nav;
+                        newWebPageView.uri = request.url;
+                        nav.push(newWebPageView);
                     }
                 }
                 onLoadingChanged: {
