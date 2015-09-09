@@ -17,16 +17,25 @@ NavigationPane {
                 id: aboutpage
             }
         }
-        actions: ActionItem {
-            title: qsTr("Theme")
-            onTriggered: {
-                var isDarkNow = (Application.themeSupport.theme.colorTheme.style === VisualStyle.Dark);
-                var newtheme = ! isDarkNow;
-                _app.setv("use_dark_theme", newtheme ? "dark" : "bright");
-                Application.themeSupport.setVisualStyle(newtheme ? VisualStyle.Dark : VisualStyle.Bright);
+        actions: [
+            ActionItem {
+                title: qsTr("Review")
+                imageSource: "asset:///icon/ic_edit_bookmarks.png"
+                onTriggered: {
+                    Qt.openUrlExternally("appworld://content/58370266")
+                }
+            },
+            ActionItem {
+                title: qsTr("Theme")
+                onTriggered: {
+                    var isDarkNow = (Application.themeSupport.theme.colorTheme.style === VisualStyle.Dark);
+                    var newtheme = ! isDarkNow;
+                    _app.setv("use_dark_theme", newtheme ? "dark" : "bright");
+                    Application.themeSupport.setVisualStyle(newtheme ? VisualStyle.Dark : VisualStyle.Bright);
+                }
+                imageSource: "asset:///icon/icon_211.png"
             }
-            imageSource: "asset:///icon/icon_211.png"
-        }
+        ]
     }
     Page {
         property bool showTimeMachinePanel: false
