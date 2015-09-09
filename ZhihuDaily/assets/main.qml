@@ -19,6 +19,17 @@ NavigationPane {
                 id: aboutpage
             }
         }
+        settingsAction: SettingsActionItem {
+            onTriggered: {
+                var settings_page_obj = settingspage.createObject();
+                settings_page_obj.nav = navigationPane;
+                navigationPane.push(settings_page_obj);
+            }
+            attachedObjects: ComponentDefinition {
+                source: "settings.qml"
+                id: settingspage
+            }
+        }
         actions: [
             ActionItem {
                 title: qsTr("Review")

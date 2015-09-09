@@ -38,6 +38,7 @@ config_pri_assets {
     OTHER_FILES += \
         $$quote($$BASEDIR/assets/Common.qml) \
         $$quote($$BASEDIR/assets/VisualStyle.Dark/ad.css) \
+        $$quote($$BASEDIR/assets/VisualStyle.Dark/image/bg.png) \
         $$quote($$BASEDIR/assets/about.qml) \
         $$quote($$BASEDIR/assets/ad.css) \
         $$quote($$BASEDIR/assets/icon/ic_browser.png) \
@@ -52,6 +53,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/icon/ic_share.png) \
         $$quote($$BASEDIR/assets/icon/ic_zoom_in.png) \
         $$quote($$BASEDIR/assets/icon/ic_zoom_out.png) \
+        $$quote($$BASEDIR/assets/icon/icon_187.png) \
         $$quote($$BASEDIR/assets/icon/icon_211.png) \
         $$quote($$BASEDIR/assets/image/bg.png) \
         $$quote($$BASEDIR/assets/image/dim.amd) \
@@ -91,6 +93,9 @@ lupdate_inclusion {
         $$quote($$BASEDIR/../assets/VisualStyle.Dark/*.qml) \
         $$quote($$BASEDIR/../assets/VisualStyle.Dark/*.js) \
         $$quote($$BASEDIR/../assets/VisualStyle.Dark/*.qs) \
+        $$quote($$BASEDIR/../assets/VisualStyle.Dark/image/*.qml) \
+        $$quote($$BASEDIR/../assets/VisualStyle.Dark/image/*.js) \
+        $$quote($$BASEDIR/../assets/VisualStyle.Dark/image/*.qs) \
         $$quote($$BASEDIR/../assets/icon/*.qml) \
         $$quote($$BASEDIR/../assets/icon/*.js) \
         $$quote($$BASEDIR/../assets/icon/*.qs) \

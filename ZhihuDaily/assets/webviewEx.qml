@@ -88,6 +88,7 @@ Page {
                     scrview.scrollViewProperties.maxContentScale = maxContentScale;
                 }
                 settings.webInspectorEnabled: true
+                settings.imageDownloadingEnabled: _app.getv("web_image_enabled", "true") == "true"
             }
         }
         Container {

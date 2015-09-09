@@ -46,12 +46,12 @@
     <message>
         <location filename="../assets/about.qml" line="67"/>
         <source>Project on Github</source>
-        <translation type="unfinished"></translation>
+        <translation>Github上的项目主页</translation>
     </message>
     <message>
         <location filename="../assets/about.qml" line="82"/>
         <source>Issues / Bug Report</source>
-        <translation type="unfinished"></translation>
+        <translation>问题 / 建议 / 反馈</translation>
     </message>
     <message>
         <source>&lt;a href=&apos;https://github.com/BBDev-CN/zhihu&apos;&gt;Project on Github&lt;/a&gt;</source>
@@ -83,38 +83,38 @@
         <translation type="obsolete">知乎日报</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="24"/>
+        <location filename="../assets/main.qml" line="35"/>
         <source>Review</source>
-        <translation type="unfinished"></translation>
+        <translation>评论</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="31"/>
+        <location filename="../assets/main.qml" line="42"/>
         <source>Theme</source>
         <translation>主题切换</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="286"/>
-        <location filename="../assets/main.qml" line="355"/>
+        <location filename="../assets/main.qml" line="297"/>
+        <location filename="../assets/main.qml" line="366"/>
         <source>Time Machine</source>
         <translation>时光机</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="294"/>
+        <location filename="../assets/main.qml" line="305"/>
         <source>Use this feature to navigate back in time.</source>
         <translation>使用时光机来查阅往期杂志</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="303"/>
+        <location filename="../assets/main.qml" line="314"/>
         <source>Date</source>
         <translation>日期</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="324"/>
+        <location filename="../assets/main.qml" line="335"/>
         <source>Back to Today</source>
         <translation>今天</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="343"/>
+        <location filename="../assets/main.qml" line="354"/>
         <source>Go!</source>
         <translation>出发</translation>
     </message>
@@ -126,25 +126,35 @@
 <context>
     <name>settings</name>
     <message>
-        <location filename="../assets/settings.qml" line="7"/>
+        <location filename="../assets/settings.qml" line="10"/>
         <source>Visual Style</source>
         <translation>应用外观</translation>
     </message>
     <message>
-        <location filename="../assets/settings.qml" line="26"/>
+        <location filename="../assets/settings.qml" line="29"/>
         <source>Use Dark Theme</source>
         <translation>使用暗调主题</translation>
+    </message>
+    <message>
+        <location filename="../assets/settings.qml" line="49"/>
+        <source>Web Viewer Settings</source>
+        <translation>网页选项</translation>
+    </message>
+    <message>
+        <location filename="../assets/settings.qml" line="68"/>
+        <source>Show Images</source>
+        <translation>显示图片</translation>
     </message>
 </context>
 <context>
     <name>webviewEx</name>
     <message>
-        <location filename="../assets/webviewEx.qml" line="110"/>
+        <location filename="../assets/webviewEx.qml" line="111"/>
         <source>Zoom -</source>
         <translation>缩小</translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="120"/>
+        <location filename="../assets/webviewEx.qml" line="121"/>
         <source>Zoom +</source>
         <translation>放大</translation>
     </message>
@@ -153,12 +163,12 @@
         <translation type="obsolete">还原缩放级别</translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="130"/>
+        <location filename="../assets/webviewEx.qml" line="131"/>
         <source>Share</source>
         <translation>共享网址</translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="138"/>
+        <location filename="../assets/webviewEx.qml" line="139"/>
         <source>Open in Browser</source>
         <translation>在浏览器中打开</translation>
     </message>
@@ -188,7 +198,7 @@
     <message>
         <location filename="../assets/webviewer.qml" line="16"/>
         <source>Open in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>在系统浏览器中打开</translation>
     </message>
 </context>
 </TS>

@@ -81,6 +81,14 @@
         <source>Use Dark Theme</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Web Viewer Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Images</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>webviewEx</name>

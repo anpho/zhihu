@@ -1,8 +1,9 @@
 1
-25
+27
 about.qml
 ad.css
 Common.qml
+icon/icon_187.png
 icon/icon_211.png
 icon/ic_browser.png
 icon/ic_decrease.png
@@ -23,5 +24,6 @@ image/logo.png
 main.qml
 settings.qml
 VisualStyle.Dark/ad.css
+VisualStyle.Dark/image/bg.png
 webviewer.qml
 webviewEx.qml
