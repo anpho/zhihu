@@ -47,6 +47,7 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/icon/ic_edit_bookmarks.png) \
         $$quote($$BASEDIR/assets/icon/ic_history.png) \
         $$quote($$BASEDIR/assets/icon/ic_increase.png) \
+        $$quote($$BASEDIR/assets/icon/ic_notes.png) \
         $$quote($$BASEDIR/assets/icon/ic_open.png) \
         $$quote($$BASEDIR/assets/icon/ic_reload.png) \
         $$quote($$BASEDIR/assets/icon/ic_resume.png) \

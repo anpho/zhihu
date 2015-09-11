@@ -31,7 +31,8 @@ ApplicationUI::ApplicationUI() :
     m_pTranslator = new QTranslator(this);
     m_pLocaleHandler = new LocaleHandler(this);
 
-    bool res = QObject::connect(m_pLocaleHandler, SIGNAL(systemLanguageChanged()), this, SLOT(onSystemLanguageChanged()));
+    bool res = QObject::connect(m_pLocaleHandler, SIGNAL(systemLanguageChanged()), this,
+            SLOT(onSystemLanguageChanged()));
     // This is only available in Debug builds
     Q_ASSERT(res);
     // Since the variable is not used in the app, this is added to avoid a
@@ -44,7 +45,7 @@ ApplicationUI::ApplicationUI() :
     // Create scene document from main.qml asset, the parent is set
     // to ensure the document gets destroyed properly at shut down.
     QmlDocument *qml = QmlDocument::create("asset:///main.qml").parent(this);
-    qml->setContextProperty("_app",this);
+    qml->setContextProperty("_app", this);
     // Create root object for the UI
     AbstractPane *root = qml->createRootObject<AbstractPane>();
 
@@ -66,10 +67,10 @@ QString ApplicationUI::getv(const QString &objectName, const QString &defaultVal
 {
     QSettings settings;
     if (settings.value(objectName).isNull()) {
-        qDebug()<<"[SETTINGS]" << objectName << " is "<<defaultValue;
+        qDebug() << "[SETTINGS]" << objectName << " is " << defaultValue;
         return defaultValue;
     }
-    qDebug()<<"[SETTINGS]" << objectName << " is "<<settings.value(objectName).toString();
+    qDebug() << "[SETTINGS]" << objectName << " is " << settings.value(objectName).toString();
     return settings.value(objectName).toString();
 }
 
@@ -79,7 +80,6 @@ void ApplicationUI::setv(const QString &objectName, const QString &inputValue)
     settings.setValue(objectName, QVariant(inputValue));
     qDebug() << "[SETTINGS]" << objectName << " set to " << inputValue;
 }
-
 
 void ApplicationUI::shareURL(QString text)
 {
@@ -91,6 +91,31 @@ void ApplicationUI::shareURL(QString text)
     connect(invocation, SIGNAL(finished()), this, SLOT(onFinished()));
 }
 
+void ApplicationUI::shareHTML(QString uri, QString title, QString html)
+{
+    InvokeQuery *query = InvokeQuery::create();
+    query->setInvokeTargetId("sys.pim.remember.composer");
+    query->setUri(uri);
+
+    /*
+     * use qtextdocument to parse html to plain text
+     */
+    QTextDocument doc;
+    doc.setHtml(html);
+    QString desc = doc.toPlainText() + "\n" + uri;
+
+
+    QVariantMap qm;
+    qm["subject"] = title;
+    qm["description"] = desc;
+    query->setMetadata(qm);
+
+    Invocation *invocation = Invocation::create(query);
+    query->setParent(invocation); // destroy query with invocation
+    invocation->setParent(this); // app can be destroyed before onFinished() is called
+    connect(invocation, SIGNAL(armed()), this, SLOT(onArmed()));
+    connect(invocation, SIGNAL(finished()), this, SLOT(onFinished()));
+}
 void ApplicationUI::onArmed()
 {
     Invocation *invocation = qobject_cast<Invocation *>(sender());

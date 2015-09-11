@@ -108,6 +108,10 @@
         <source>Open in Browser</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Send to Remember</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>webviewer</name>

@@ -149,26 +149,31 @@
 <context>
     <name>webviewEx</name>
     <message>
-        <location filename="../assets/webviewEx.qml" line="111"/>
+        <location filename="../assets/webviewEx.qml" line="113"/>
         <source>Zoom -</source>
         <translation>缩小</translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="121"/>
+        <location filename="../assets/webviewEx.qml" line="123"/>
         <source>Zoom +</source>
         <translation>放大</translation>
+    </message>
+    <message>
+        <location filename="../assets/webviewEx.qml" line="149"/>
+        <source>Send to Remember</source>
+        <translation>发送到Remember</translation>
     </message>
     <message>
         <source>Zoom Reset</source>
         <translation type="obsolete">还原缩放级别</translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="131"/>
+        <location filename="../assets/webviewEx.qml" line="133"/>
         <source>Share</source>
         <translation>共享网址</translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="139"/>
+        <location filename="../assets/webviewEx.qml" line="141"/>
         <source>Open in Browser</source>
         <translation>在浏览器中打开</translation>
     </message>

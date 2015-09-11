@@ -31,11 +31,13 @@ Page {
             load("http://news-at.zhihu.com/api/4/news/%1".arg(id))
         }
     }
+    property string webcontent
     function load(url) {
         co.ajax("GET", url, [], function(d) {
                 loading = false
                 if (d['success']) {
                     var dt = JSON.parse(d['data']);
+                    webcontent = dt.body;
                     webv.url = dt.share_url;
                 } else {
                     console.log(d['data'])
@@ -142,6 +144,15 @@ Page {
                 Qt.openUrlExternally(webv.url.toString());
             }
             imageSource: "asset:///icon/ic_open.png"
+        },
+        ActionItem {
+            title: qsTr("Send to Remember")
+            ActionBar.placement: ActionBarPlacement.InOverflow
+            onTriggered: {
+                _app.shareHTML(webv.url, webv.title, webcontent);
+            }
+            imageSource: "asset:///icon/ic_notes.png"
+
         }
     ]
 }

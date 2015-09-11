@@ -1,5 +1,5 @@
 1
-27
+28
 about.qml
 ad.css
 Common.qml
@@ -11,6 +11,7 @@ icon/ic_done.png
 icon/ic_edit_bookmarks.png
 icon/ic_history.png
 icon/ic_increase.png
+icon/ic_notes.png
 icon/ic_open.png
 icon/ic_reload.png
 icon/ic_resume.png

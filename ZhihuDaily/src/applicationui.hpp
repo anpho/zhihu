@@ -42,6 +42,7 @@ public:
     virtual ~ApplicationUI() {};
      Q_INVOKABLE QString getv(const QString &objectName, const QString &defaultValue);
      Q_INVOKABLE void setv(const QString &objectName, const QString &inputValue);
+     Q_INVOKABLE void shareHTML(QString uri,QString title,QString html);
     Q_INVOKABLE void shareURL(QString text);
 private slots:
     void onSystemLanguageChanged();
