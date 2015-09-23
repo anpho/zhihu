@@ -89,6 +89,30 @@
         <source>Show Images</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>FrontPage Style</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose the style of zhihu frontpage. Please be aware that this will take effect on next app start.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grid Layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default layout, better for larger devices.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>List Layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Official app style.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>webviewEx</name>
@@ -109,7 +133,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Send to Remember</source>
+        <source>Send Text to Remember</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

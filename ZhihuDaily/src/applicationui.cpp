@@ -113,6 +113,7 @@ void ApplicationUI::shareHTML(QString uri, QString title, QString html)
     Invocation *invocation = Invocation::create(query);
     query->setParent(invocation); // destroy query with invocation
     invocation->setParent(this); // app can be destroyed before onFinished() is called
+
     connect(invocation, SIGNAL(armed()), this, SLOT(onArmed()));
     connect(invocation, SIGNAL(finished()), this, SLOT(onFinished()));
 }

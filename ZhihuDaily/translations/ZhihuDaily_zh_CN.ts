@@ -93,28 +93,28 @@
         <translation>主题切换</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="297"/>
-        <location filename="../assets/main.qml" line="366"/>
+        <location filename="../assets/main.qml" line="325"/>
+        <location filename="../assets/main.qml" line="394"/>
         <source>Time Machine</source>
         <translation>时光机</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="305"/>
+        <location filename="../assets/main.qml" line="333"/>
         <source>Use this feature to navigate back in time.</source>
         <translation>使用时光机来查阅往期杂志</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="314"/>
+        <location filename="../assets/main.qml" line="342"/>
         <source>Date</source>
         <translation>日期</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="335"/>
+        <location filename="../assets/main.qml" line="363"/>
         <source>Back to Today</source>
         <translation>今天</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="354"/>
+        <location filename="../assets/main.qml" line="382"/>
         <source>Go!</source>
         <translation>出发</translation>
     </message>
@@ -145,6 +145,40 @@
         <source>Show Images</source>
         <translation>显示图片</translation>
     </message>
+    <message>
+        <location filename="../assets/settings.qml" line="83"/>
+        <source>FrontPage Style</source>
+        <translation>首页风格</translation>
+    </message>
+    <message>
+        <location filename="../assets/settings.qml" line="91"/>
+        <source>Choose the style of zhihu frontpage. Please be aware that this will take effect on next app start.</source>
+        <translation>选择知乎日报的首页列表风格。请注意：此选项需要重启应用后才能生效。</translation>
+    </message>
+    <message>
+        <location filename="../assets/settings.qml" line="97"/>
+        <source>Grid Layout</source>
+        <translation>方格</translation>
+    </message>
+    <message>
+        <location filename="../assets/settings.qml" line="98"/>
+        <source>Default layout, better for larger devices.</source>
+        <translation>默认布局，推荐大屏幕设备使用。</translation>
+    </message>
+    <message>
+        <location filename="../assets/settings.qml" line="104"/>
+        <source>List Layout</source>
+        <translation>列表</translation>
+    </message>
+    <message>
+        <location filename="../assets/settings.qml" line="105"/>
+        <source>Official app style.</source>
+        <translation>官方app样式。</translation>
+    </message>
+    <message>
+        <source>Please restart this app to change layout.</source>
+        <translation type="obsolete">请重新启动应用程序以使设置生效。</translation>
+    </message>
 </context>
 <context>
     <name>webviewEx</name>
@@ -160,8 +194,12 @@
     </message>
     <message>
         <location filename="../assets/webviewEx.qml" line="149"/>
+        <source>Send Text to Remember</source>
+        <translation>发送文本到Remember</translation>
+    </message>
+    <message>
         <source>Send to Remember</source>
-        <translation>发送到Remember</translation>
+        <translation type="obsolete">发送到Remember</translation>
     </message>
     <message>
         <source>Zoom Reset</source>

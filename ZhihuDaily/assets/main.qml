@@ -69,6 +69,13 @@ NavigationPane {
         onCreationCompleted: {
             ds.load()
         }
+        /*
+         * layout style
+         * 0 : grid layout
+         * 1: list layout
+         */
+        property int layoutstyle: + _app.getv("style", 0)
+
         Container {
             layout: DockLayout {
 
@@ -83,6 +90,12 @@ NavigationPane {
                 }
                 gestureHandlers: PinchHandler {
                     onPinchEnded: {
+                        if (toppage.layoutstyle == 1) {
+                            /*
+                             * if is using list layout, dismiss.
+                             */
+                            return;
+                        }
                         console.log(event.pinchRatio)
                         if (event.pinchRatio > 1) {
                             lv.columnsInGrid = Math.max(lv.columnsInGrid - 1, 1);
@@ -99,7 +112,12 @@ NavigationPane {
                 snapMode: SnapMode.Default
 
                 function itemType(data, indexPath) {
-                    return (data.header ? 'header2' : 'item2');
+                    if (toppage.layoutstyle == 0) {
+                        return (data.header ? 'header2' : 'item2');
+                    } else if (toppage.layoutstyle == 1) {
+                        return (data.header ? 'header' : 'item1');
+                    }
+
                 }
                 function requestView(id) {
                     var page = webv.createObject(navigationPane);
@@ -269,17 +287,27 @@ NavigationPane {
                                 toppage.load();
                             }
                         }
+                    },
+                    ComponentDefinition {
+                        id: gridlayoutDef
+                        GridListLayout {
+                            columnCount: lv.columnsInGrid
+                            headerMode: ListHeaderMode.None
+                            cellAspectRatio: lv.columnsInGrid == 1 ? 16 / 5 : 1
+                        }
+                    },
+                    ComponentDefinition {
+                        id: defaultLayoutDef
+                        StackLayout {
+
+                        }
                     }
                 ]
                 bufferedScrollingEnabled: true
                 horizontalAlignment: HorizontalAlignment.Fill
                 verticalAlignment: VerticalAlignment.Fill
                 scrollRole: ScrollRole.Main
-                layout: GridListLayout {
-                    columnCount: lv.columnsInGrid
-                    headerMode: ListHeaderMode.None
-                    cellAspectRatio: lv.columnsInGrid == 1 ? 16 / 5 : 1
-                }
+                layout: toppage.layoutstyle == 0 ? gridlayoutDef.createObject() : defaultLayoutDef.createObject()
             }
             Container {
                 visible: toppage.showTimeMachinePanel

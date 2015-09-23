@@ -146,7 +146,7 @@ Page {
             imageSource: "asset:///icon/ic_open.png"
         },
         ActionItem {
-            title: qsTr("Send to Remember")
+            title: qsTr("Send Text to Remember")
             ActionBar.placement: ActionBarPlacement.InOverflow
             onTriggered: {
                 _app.shareHTML(webv.url, webv.title, webcontent);

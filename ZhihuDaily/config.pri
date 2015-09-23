@@ -52,6 +52,8 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/icon/ic_reload.png) \
         $$quote($$BASEDIR/assets/icon/ic_resume.png) \
         $$quote($$BASEDIR/assets/icon/ic_share.png) \
+        $$quote($$BASEDIR/assets/icon/ic_view_grid.png) \
+        $$quote($$BASEDIR/assets/icon/ic_view_list.png) \
         $$quote($$BASEDIR/assets/icon/ic_zoom_in.png) \
         $$quote($$BASEDIR/assets/icon/ic_zoom_out.png) \
         $$quote($$BASEDIR/assets/icon/icon_187.png) \
