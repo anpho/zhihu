@@ -115,6 +115,16 @@ Page {
                     dividersVisible: true
                 }
             }
+            Divider {
+                
+            }
+            Label {
+                text: qsTr("Merrick Zhang")
+                horizontalAlignment: HorizontalAlignment.Fill
+                textStyle.textAlign: TextAlign.Center
+                textStyle.fontSize: FontSize.XXSmall
+                textStyle.fontWeight: FontWeight.W100
+            }
         }
     }
 }

@@ -73,6 +73,43 @@
     </message>
 </context>
 <context>
+    <name>comments</name>
+    <message>
+        <location filename="../assets/comments.qml" line="74"/>
+        <source>By %1 </source>
+        <translation>作者 %1 </translation>
+    </message>
+    <message>
+        <location filename="../assets/comments.qml" line="79"/>
+        <source>Likes(%1) </source>
+        <translation>喜欢(%1) </translation>
+    </message>
+    <message>
+        <location filename="../assets/comments.qml" line="99"/>
+        <source>Long Comments(%1)</source>
+        <translation>长评论(%1)</translation>
+    </message>
+    <message>
+        <location filename="../assets/comments.qml" line="103"/>
+        <source>Short Comments(%1)</source>
+        <translation>短评论(%1)</translation>
+    </message>
+    <message>
+        <source>Nothing here</source>
+        <translation type="obsolete">没有内容</translation>
+    </message>
+    <message>
+        <location filename="../assets/comments.qml" line="146"/>
+        <source>Load long comments failed, error is : %1</source>
+        <translation>加载长评论失败，错误为： %1</translation>
+    </message>
+    <message>
+        <location filename="../assets/comments.qml" line="178"/>
+        <source>Load short comments failed, error is : %1</source>
+        <translation>加载短评论失败，错误为： %1</translation>
+    </message>
+</context>
+<context>
     <name>main</name>
     <message>
         <source>Loading</source>
@@ -176,6 +213,11 @@
         <translation>官方app样式。</translation>
     </message>
     <message>
+        <location filename="../assets/settings.qml" line="122"/>
+        <source>Merrick Zhang</source>
+        <translation></translation>
+    </message>
+    <message>
         <source>Please restart this app to change layout.</source>
         <translation type="obsolete">请重新启动应用程序以使设置生效。</translation>
     </message>
@@ -194,8 +236,17 @@
     </message>
     <message>
         <location filename="../assets/webviewEx.qml" line="149"/>
+        <source>Remember</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="../assets/webviewEx.qml" line="157"/>
+        <source>Comments</source>
+        <translation>查看评论</translation>
+    </message>
+    <message>
         <source>Send Text to Remember</source>
-        <translation>发送文本到Remember</translation>
+        <translation type="obsolete">发送文本到Remember</translation>
     </message>
     <message>
         <source>Send to Remember</source>

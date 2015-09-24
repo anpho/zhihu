@@ -41,10 +41,12 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/VisualStyle.Dark/image/bg.png) \
         $$quote($$BASEDIR/assets/about.qml) \
         $$quote($$BASEDIR/assets/ad.css) \
+        $$quote($$BASEDIR/assets/comments.qml) \
         $$quote($$BASEDIR/assets/icon/ic_browser.png) \
         $$quote($$BASEDIR/assets/icon/ic_decrease.png) \
         $$quote($$BASEDIR/assets/icon/ic_done.png) \
         $$quote($$BASEDIR/assets/icon/ic_edit_bookmarks.png) \
+        $$quote($$BASEDIR/assets/icon/ic_feedback.png) \
         $$quote($$BASEDIR/assets/icon/ic_history.png) \
         $$quote($$BASEDIR/assets/icon/ic_increase.png) \
         $$quote($$BASEDIR/assets/icon/ic_notes.png) \

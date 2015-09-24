@@ -41,6 +41,33 @@
     </message>
 </context>
 <context>
+    <name>comments</name>
+    <message>
+        <source>Long Comments(%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Short Comments(%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load long comments failed, error is : %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Load short comments failed, error is : %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>By %1 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Likes(%1) </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>main</name>
     <message>
         <source>Time Machine</source>
@@ -113,6 +140,10 @@
         <source>Official app style.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Merrick Zhang</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>webviewEx</name>
@@ -133,7 +164,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Send Text to Remember</source>
+        <source>Remember</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comments</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

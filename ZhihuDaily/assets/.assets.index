@@ -1,5 +1,5 @@
 1
-30
+32
 icon/ic_view_list.png
 icon/ic_decrease.png
 icon/ic_browser.png
@@ -7,6 +7,7 @@ icon/ic_history.png
 icon/ic_open.png
 icon/ic_increase.png
 icon/ic_share.png
+icon/ic_feedback.png
 icon/ic_done.png
 icon/ic_resume.png
 icon/ic_view_grid.png
@@ -19,6 +20,7 @@ icon/ic_zoom_out.png
 icon/icon_211.png
 Common.qml
 settings.qml
+comments.qml
 image/bg.png
 image/logo.png
 image/dim.amd

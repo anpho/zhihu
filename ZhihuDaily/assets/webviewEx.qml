@@ -111,7 +111,7 @@ Page {
     actions: [
         ActionItem {
             title: qsTr("Zoom -")
-            ActionBar.placement: ActionBarPlacement.OnBar
+            ActionBar.placement: ActionBarPlacement.InOverflow
             onTriggered: {
                 var newsize = Math.max(12, fontsize - 2)
                 webv.evaluateJavaScript(changeFontSize.arg(newsize))
@@ -121,7 +121,7 @@ Page {
         },
         ActionItem {
             title: qsTr("Zoom +")
-            ActionBar.placement: ActionBarPlacement.OnBar
+            ActionBar.placement: ActionBarPlacement.InOverflow
             onTriggered: {
                 var newsize = Math.min(28, fontsize + 2)
                 webv.evaluateJavaScript(changeFontSize.arg(newsize))
@@ -131,7 +131,7 @@ Page {
         },
         ActionItem {
             title: qsTr("Share")
-            ActionBar.placement: ActionBarPlacement.Signature
+            ActionBar.placement: ActionBarPlacement.OnBar
             onTriggered: {
                 _app.shareURL(webv.url.toString());
             }
@@ -146,13 +146,24 @@ Page {
             imageSource: "asset:///icon/ic_open.png"
         },
         ActionItem {
-            title: qsTr("Send Text to Remember")
-            ActionBar.placement: ActionBarPlacement.InOverflow
+            title: qsTr("Remember")
+            ActionBar.placement: ActionBarPlacement.OnBar
             onTriggered: {
                 _app.shareHTML(webv.url, webv.title, webcontent);
             }
             imageSource: "asset:///icon/ic_notes.png"
-
+        },
+        ActionItem {
+            title: qsTr("Comments")
+            ActionBar.placement: ActionBarPlacement.Signature
+            onTriggered: {
+                var commentsReader = Qt.createComponent("comments.qml").createObject(nav);
+                commentsReader.articleid = id;
+                commentsReader.nav = nav;
+                commentsReader.loadData();
+                nav.push(commentsReader);
+            }
+            imageSource: "asset:///icon/ic_feedback.png"
         }
     ]
 }
