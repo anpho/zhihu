@@ -37,6 +37,7 @@ simulator {
 config_pri_assets {
     OTHER_FILES += \
         $$quote($$BASEDIR/assets/Common.qml) \
+        $$quote($$BASEDIR/assets/TextviewEx.qml) \
         $$quote($$BASEDIR/assets/VisualStyle.Dark/ad.css) \
         $$quote($$BASEDIR/assets/VisualStyle.Dark/image/bg.png) \
         $$quote($$BASEDIR/assets/about.qml) \
@@ -60,6 +61,8 @@ config_pri_assets {
         $$quote($$BASEDIR/assets/icon/ic_zoom_out.png) \
         $$quote($$BASEDIR/assets/icon/icon_187.png) \
         $$quote($$BASEDIR/assets/icon/icon_211.png) \
+        $$quote($$BASEDIR/assets/icon/t.png) \
+        $$quote($$BASEDIR/assets/icon/w.png) \
         $$quote($$BASEDIR/assets/image/bg.png) \
         $$quote($$BASEDIR/assets/image/dim.amd) \
         $$quote($$BASEDIR/assets/image/dim.png) \

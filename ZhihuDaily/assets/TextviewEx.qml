@@ -17,10 +17,19 @@ Page {
         }
         scrview.scrollRole = ScrollRole.Main
     }
+    function trimHTML(htmltext) {
+        var c = htmltext.replace(/<(br|p|\/p|\/span).*?>/ig, "@MRK@#");
+        console.log(c);
+        c = c.replace(/(<[^>]*>)/g, "");
+        c = c.replace(/\s+/g, "");
+        c = c.replace("查看知乎讨论", "@MRK@#@MRK@#");
+        c = c.replace(/@MRK@#/g, "\r\n　　");
+        return c;
+    }
     property string changeFontSize: "var a=document.createElement('style');a.innerHTML='.content { font-size: %1px }';document.head.appendChild(a);"
-    property int fontsize: _app.getv("fontsize", webv.settings.defaultFontSize)
+    property double fontsize: _app.getv("txtfontsize", "12")
     onFontsizeChanged: {
-        _app.setv("fontsize", fontsize)
+        _app.setv("txtfontsize", fontsize)
     }
 
     property string id
@@ -32,13 +41,16 @@ Page {
         }
     }
     property string webcontent
+    property string weburl
+    property string webtitle
     function load(url) {
         co.ajax("GET", url, [], function(d) {
                 loading = false
                 if (d['success']) {
                     var dt = JSON.parse(d['data']);
-                    webcontent = dt.body;
-                    webv.url = dt.share_url;
+                    webcontent = trimHTML(dt.body);
+                    webtitle=dt.title;
+                    weburl = dt.share_url;
                 } else {
                     console.log(d['data'])
                     sst.body = d['data'];
@@ -50,6 +62,7 @@ Page {
         layout: DockLayout {
 
         }
+
         ImageView {
             imageSource: "asset:///image/bg.png"
             scalingMethod: ScalingMethod.AspectFill
@@ -60,50 +73,25 @@ Page {
             id: scrview
             horizontalAlignment: HorizontalAlignment.Fill
             verticalAlignment: VerticalAlignment.Fill
-            scrollViewProperties.pinchToZoomEnabled: true
-            // FIX #7 , won't scroll when content doesn't zoomed.
-            scrollViewProperties.scrollMode: scrview.contentScale > 1 ? ScrollMode.Both : ScrollMode.Vertical
-            WebView {
-                id: webv
+            Container {
+                leftPadding: 20.0
+                rightPadding: 20.0
+                topPadding: 20.0
+                bottomPadding: 20.0
                 horizontalAlignment: HorizontalAlignment.Fill
-                settings.userStyleSheetLocation: "ad.css"
-                settings.userAgent: "Mozilla/5.0 (Linux; U; Android 2.2; en-us; Nexus One Build/FRF91) AppleWebKit/533.1 (KHTML, like Gecko) Version/4.0 Mobile Safari/533.1"
-                onNavigationRequested: {
-                    if (request.navigationType == WebNavigationType.OpenWindow || request.navigationType == WebNavigationType.LinkClicked) {
-                        request.action = WebNavigationRequestAction.Ignore
-                        var newWebPageView = Qt.createComponent("webviewer.qml").createObject(nav);
-                        newWebPageView.nav = nav;
-                        newWebPageView.uri = request.url;
-                        nav.push(newWebPageView);
-                    }
+                verticalAlignment: VerticalAlignment.Fill
+                implicitLayoutAnimationsEnabled: false
+                Label {
+                    id: textcontent
+                    text: webcontent
+                    multiline: true
+                    textFormat: TextFormat.Html
+                    textStyle.fontSizeValue: fontsize
+                    textStyle.fontSize: FontSize.PointValue
+                    implicitLayoutAnimationsEnabled: false
                 }
-                onLoadingChanged: {
-                    if (! loading) {
-                        webv.evaluateJavaScript(changeFontSize.arg(fontsize))
-                    }
-                }
-                //            settings.viewport: { "initial-scale" : 1.0 }
-                onMinContentScaleChanged: {
-                    scrview.scrollViewProperties.minContentScale = minContentScale;
-                }
-                onMaxContentScaleChanged: {
-                    scrview.scrollViewProperties.maxContentScale = maxContentScale;
-                }
-                settings.webInspectorEnabled: true
-                settings.imageDownloadingEnabled: _app.getv("web_image_enabled", "true") == "true"
             }
         }
-        Container {
-            visible: webv.loading
-            ProgressIndicator {
-                value: webv.loadProgress
-                fromValue: 0
-                toValue: 100
-            }
-            horizontalAlignment: HorizontalAlignment.Fill
-            verticalAlignment: VerticalAlignment.Top
-        }
-
     }
     actionBarAutoHideBehavior: ActionBarAutoHideBehavior.HideOnScroll
     actionBarVisibility: ChromeVisibility.Overlay
@@ -113,9 +101,7 @@ Page {
             title: qsTr("Zoom -")
             ActionBar.placement: ActionBarPlacement.InOverflow
             onTriggered: {
-                var newsize = Math.max(12, fontsize - 2)
-                webv.evaluateJavaScript(changeFontSize.arg(newsize))
-                fontsize = newsize;
+                fontsize *= 0.8;
             }
             imageSource: "asset:///icon/ic_zoom_out.png"
         },
@@ -123,17 +109,15 @@ Page {
             title: qsTr("Zoom +")
             ActionBar.placement: ActionBarPlacement.InOverflow
             onTriggered: {
-                var newsize = Math.min(28, fontsize + 2)
-                webv.evaluateJavaScript(changeFontSize.arg(newsize))
-                fontsize = newsize;
+                fontsize *= 1.25;
             }
             imageSource: "asset:///icon/ic_zoom_in.png"
         },
         ActionItem {
             title: qsTr("Share")
-            ActionBar.placement: ActionBarPlacement.OnBar
+            ActionBar.placement: ActionBarPlacement.InOverflow
             onTriggered: {
-                _app.shareURL(webv.url.toString());
+                _app.shareURL(weburl);
             }
             imageSource: "asset:///icon/ic_share.png"
         },
@@ -141,7 +125,7 @@ Page {
             title: qsTr("Open in Browser")
             ActionBar.placement: ActionBarPlacement.InOverflow
             onTriggered: {
-                Qt.openUrlExternally(webv.url.toString());
+                Qt.openUrlExternally(weburl);
             }
             imageSource: "asset:///icon/ic_open.png"
         },
@@ -151,13 +135,14 @@ Page {
             onTriggered: {
                 sst.body = qsTr("Processing content, please wait. \r\nRemember will show up if the content is not too long.");
                 sst.show();
-                _app.shareHTML(webv.url, webv.title, webcontent);
+                var cc = webcontent.replace(/\s+/g, "\n");
+                _app.shareTXT(weburl, webtitle, cc);
             }
             imageSource: "asset:///icon/ic_notes.png"
         },
         ActionItem {
             title: qsTr("Comments")
-            ActionBar.placement: ActionBarPlacement.Signature
+            ActionBar.placement: ActionBarPlacement.OnBar
             onTriggered: {
                 var commentsReader = Qt.createComponent("comments.qml").createObject(nav);
                 commentsReader.articleid = id;
@@ -166,6 +151,17 @@ Page {
                 nav.push(commentsReader);
             }
             imageSource: "asset:///icon/ic_feedback.png"
+        },
+        ActionItem {
+            title: qsTr("Web View")
+            ActionBar.placement: ActionBarPlacement.Signature
+            imageSource: "asset:///icon/ic_browser.png"
+            onTriggered: {
+                var webviewer = Qt.createComponent("webviewEx.qml").createObject(nav);
+                webviewer.nav = nav;
+                webviewer.id = id;
+                nav.push(webviewer);
+            }
         }
     ]
 }

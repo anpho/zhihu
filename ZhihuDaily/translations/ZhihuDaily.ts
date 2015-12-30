@@ -2,6 +2,42 @@
 <!DOCTYPE TS>
 <TS version="2.0">
 <context>
+    <name>TextviewEx</name>
+    <message>
+        <source>Zoom -</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom +</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open in Browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Remember</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Web View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Processing content, please wait. 
+Remember will show up if the content is not too long.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>about</name>
     <message>
         <source>Re-built with BlackBerry Cascades</source>
@@ -97,6 +133,14 @@
         <source>Review</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>TextMode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>WebMode</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>settings</name>
@@ -140,10 +184,6 @@
         <source>Official app style.</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Merrick Zhang</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>webviewEx</name>
@@ -169,6 +209,11 @@
     </message>
     <message>
         <source>Comments</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Processing content, please wait. 
+Remember will show up if the content is not too long.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

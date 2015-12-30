@@ -17,6 +17,55 @@
     </message>
 </context>
 <context>
+    <name>TextviewEx</name>
+    <message>
+        <location filename="../assets/TextviewEx.qml" line="101"/>
+        <source>Zoom -</source>
+        <translation>缩小</translation>
+    </message>
+    <message>
+        <location filename="../assets/TextviewEx.qml" line="109"/>
+        <source>Zoom +</source>
+        <translation>放大</translation>
+    </message>
+    <message>
+        <location filename="../assets/TextviewEx.qml" line="117"/>
+        <source>Share</source>
+        <translation>共享网址</translation>
+    </message>
+    <message>
+        <location filename="../assets/TextviewEx.qml" line="125"/>
+        <source>Open in Browser</source>
+        <translation>在浏览器中打开</translation>
+    </message>
+    <message>
+        <location filename="../assets/TextviewEx.qml" line="133"/>
+        <source>Remember</source>
+        <translation>笔记</translation>
+    </message>
+    <message>
+        <location filename="../assets/TextviewEx.qml" line="136"/>
+        <source>Processing content, please wait. 
+Remember will show up if the content is not too long.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Processing content, please wait. 
+Remember will show up if the content is not too long.</source>
+        <translation type="obsolete">正在处理内容，请稍等。如果长时间无反应，则可能是内容长度超出Remember限制。</translation>
+    </message>
+    <message>
+        <location filename="../assets/TextviewEx.qml" line="144"/>
+        <source>Comments</source>
+        <translation>查看评论</translation>
+    </message>
+    <message>
+        <location filename="../assets/TextviewEx.qml" line="156"/>
+        <source>Web View</source>
+        <translation>网页模式</translation>
+    </message>
+</context>
+<context>
     <name>about</name>
     <message>
         <location filename="../assets/about.qml" line="25"/>
@@ -125,33 +174,43 @@
         <translation>评论</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="42"/>
+        <location filename="../assets/main.qml" line="43"/>
+        <source>TextMode</source>
+        <translation>文本模式</translation>
+    </message>
+    <message>
+        <location filename="../assets/main.qml" line="43"/>
+        <source>WebMode</source>
+        <translation>网页模式</translation>
+    </message>
+    <message>
+        <location filename="../assets/main.qml" line="55"/>
         <source>Theme</source>
         <translation>主题切换</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="325"/>
-        <location filename="../assets/main.qml" line="394"/>
+        <location filename="../assets/main.qml" line="347"/>
+        <location filename="../assets/main.qml" line="416"/>
         <source>Time Machine</source>
         <translation>时光机</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="333"/>
+        <location filename="../assets/main.qml" line="355"/>
         <source>Use this feature to navigate back in time.</source>
         <translation>使用时光机来查阅往期杂志</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="342"/>
+        <location filename="../assets/main.qml" line="364"/>
         <source>Date</source>
         <translation>日期</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="363"/>
+        <location filename="../assets/main.qml" line="385"/>
         <source>Back to Today</source>
         <translation>今天</translation>
     </message>
     <message>
-        <location filename="../assets/main.qml" line="382"/>
+        <location filename="../assets/main.qml" line="404"/>
         <source>Go!</source>
         <translation>出发</translation>
     </message>
@@ -213,11 +272,6 @@
         <translation>官方app样式。</translation>
     </message>
     <message>
-        <location filename="../assets/settings.qml" line="122"/>
-        <source>Merrick Zhang</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Please restart this app to change layout.</source>
         <translation type="obsolete">请重新启动应用程序以使设置生效。</translation>
     </message>
@@ -240,7 +294,18 @@
         <translation></translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="157"/>
+        <location filename="../assets/webviewEx.qml" line="152"/>
+        <source>Processing content, please wait. 
+Remember will show up if the content is not too long.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Processing content, please wait. 
+Remember will show up if the content is not too long.</source>
+        <translation type="obsolete">正在处理内容，请稍等。如果长时间无反应，则可能是内容长度超出Remember限制。</translation>
+    </message>
+    <message>
+        <location filename="../assets/webviewEx.qml" line="159"/>
         <source>Comments</source>
         <translation>查看评论</translation>
     </message>

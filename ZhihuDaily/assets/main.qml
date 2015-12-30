@@ -39,6 +39,19 @@ NavigationPane {
                 }
             },
             ActionItem {
+                property string mode: _app.getv("mode", "web")
+                title: mode == "text" ? qsTr("TextMode") : qsTr("WebMode")
+                imageSource: mode == "text" ? "asset:///icon/t.png" : "asset:///icon/w.png"
+                onTriggered: {
+                    if (mode == "text") {
+                        mode = "web"
+                    } else {
+                        mode = "text"
+                    }
+                    _app.setv("mode", mode);
+                }
+            },
+            ActionItem {
                 title: qsTr("Theme")
                 onTriggered: {
                     var isDarkNow = (Application.themeSupport.theme.colorTheme.style === VisualStyle.Dark);
@@ -120,7 +133,12 @@ NavigationPane {
 
                 }
                 function requestView(id) {
-                    var page = webv.createObject(navigationPane);
+                    var page, mode = _app.getv("mode", "web");
+                    if (mode == "text") {
+                        page = txtv.createObject(navigationPane);
+                    } else {
+                        page = webv.createObject(navigationPane);
+                    }
                     page.nav = navigationPane;
                     page.id = id;
                     navigationPane.push(page);
@@ -279,6 +297,10 @@ NavigationPane {
                     ComponentDefinition {
                         id: webv
                         source: "webviewEx.qml"
+                    },
+                    ComponentDefinition {
+                        id: txtv
+                        source: "TextviewEx.qml"
                     },
                     ListScrollStateHandler {
                         id: lss

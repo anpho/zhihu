@@ -90,7 +90,23 @@ void ApplicationUI::shareURL(QString text)
     connect(invocation, SIGNAL(armed()), this, SLOT(onArmed()));
     connect(invocation, SIGNAL(finished()), this, SLOT(onFinished()));
 }
+void ApplicationUI::shareTXT(QString uri, QString title, QString text){
+    InvokeQuery *query = InvokeQuery::create();
+       query->setInvokeTargetId("sys.pim.remember.composer");
+       query->setUri(uri);
 
+       QVariantMap qm;
+       qm["subject"] = title;
+       qm["description"] = text;
+       query->setMetadata(qm);
+
+       Invocation *invocation = Invocation::create(query);
+       query->setParent(invocation); // destroy query with invocation
+       invocation->setParent(this); // app can be destroyed before onFinished() is called
+
+       connect(invocation, SIGNAL(armed()), this, SLOT(onArmed()));
+       connect(invocation, SIGNAL(finished()), this, SLOT(onFinished()));
+}
 void ApplicationUI::shareHTML(QString uri, QString title, QString html)
 {
     InvokeQuery *query = InvokeQuery::create();
