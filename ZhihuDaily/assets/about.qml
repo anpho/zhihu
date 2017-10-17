@@ -30,25 +30,11 @@ Page {
                 title: qsTr("AUTHOR")
             }
             Label {
-                text: "Merrick Zhang ( anpho@bbdev.cn )"
+                text: "Merrick Zhang ( me@anpho.cn )"
                 horizontalAlignment: HorizontalAlignment.Center
                 textFormat: TextFormat.Html
             }
-            Label {
-                text: "BBDev.CN" + String.fromCharCode(0x2197)
-                textFormat: TextFormat.Html
-                horizontalAlignment: HorizontalAlignment.Center
-                gestureHandlers: TapHandler {
-                    onTapped: {
-                        var target_url = "http://bbdev.cn";
-                        var webv = Qt.createComponent("webviewer.qml").createObject(nav);
-                        webv.nav = nav;
-                        webv.uri = target_url;
-                        nav.push(webv);
-                    }
-                }
-                textStyle.color: ui.palette.primary
-            }
+            
             Label {
                 text: qsTr("Please DON'T email me for bug report or feature request, use the links below.")
                 multiline: true
