@@ -63,7 +63,7 @@ void WebImageView::setUrl(QUrl url)
     /*
      * deal with "asset://" and relative image path
      */
-    if (url.scheme() != "http") {
+    if (url.scheme() != "http"  && url.scheme() !="https") {
         resetImage();
         setImageSource(url);
         return;
