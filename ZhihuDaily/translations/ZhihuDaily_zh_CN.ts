@@ -78,27 +78,27 @@ Remember will show up if the content is not too long.</source>
         <translation>作者</translation>
     </message>
     <message>
-        <location filename="../assets/about.qml" line="53"/>
+        <location filename="../assets/about.qml" line="39"/>
         <source>Please DON&apos;T email me for bug report or feature request, use the links below.</source>
         <translation>请&lt;b&gt;不要&lt;/b&gt;通过邮件反馈问题或者提出建议，请通过下方的 问题/建议/反馈 进行提交。</translation>
     </message>
     <message>
-        <location filename="../assets/about.qml" line="60"/>
+        <location filename="../assets/about.qml" line="46"/>
         <source>CONTRIBUTE</source>
         <translation>参与</translation>
     </message>
     <message>
-        <location filename="../assets/about.qml" line="63"/>
+        <location filename="../assets/about.qml" line="49"/>
         <source>You can help me to make this app better</source>
         <translation>你可以与我一起完善此应用</translation>
     </message>
     <message>
-        <location filename="../assets/about.qml" line="67"/>
+        <location filename="../assets/about.qml" line="53"/>
         <source>Project on Github</source>
         <translation>Github上的项目主页</translation>
     </message>
     <message>
-        <location filename="../assets/about.qml" line="82"/>
+        <location filename="../assets/about.qml" line="68"/>
         <source>Issues / Bug Report</source>
         <translation>问题 / 建议 / 反馈</translation>
     </message>
@@ -111,12 +111,12 @@ Remember will show up if the content is not too long.</source>
         <translation type="obsolete">&lt;a href=&apos;https://github.com/BBDev-CN/zhihu/issues&apos;&gt;问题 / 建议 / 反馈&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../assets/about.qml" line="97"/>
+        <location filename="../assets/about.qml" line="83"/>
         <source>DONATE</source>
         <translation>捐赠</translation>
     </message>
     <message>
-        <location filename="../assets/about.qml" line="100"/>
+        <location filename="../assets/about.qml" line="86"/>
         <source>Please make donations to support my development, my paypal/alipay account is : &lt;u&gt;anphorea@gmail.com&lt;/u&gt; , Thank you !</source>
         <translation>如果你觉得这个应用还行，请适当捐赠支持我的开发工作，我的paypal/支付宝账号均为 : &lt;u&gt;anphorea@gmail.com&lt;/u&gt; ， 谢谢 ！</translation>
     </message>
