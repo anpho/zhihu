@@ -1,4 +1,6 @@
 import bb.cascades 1.4
+import cn.anpho 1.0
+import bb.system 1.2
 
 Page {
     property variant nav
@@ -115,10 +117,50 @@ Page {
                     dividersVisible: true
                 }
             }
+            Header {
+                title: qsTr("Cache Management")
+            }
+            Container {
+                topPadding: 20.0
+                leftPadding: 20.0
+                bottomPadding: 20.0
+                rightPadding: 20.0
+                horizontalAlignment: HorizontalAlignment.Fill
+                Label {
+                    text: qsTr("Press the button below to clean the cache files.")
+                    multiline: true
+                }
+                Button {
+                    text: qsTr("Purge Cache")
+                    appearance: ControlAppearance.Primary
+                    horizontalAlignment: HorizontalAlignment.Center
+                    onClicked: {
+                        invisibleWebview.storage.clear()
+                        invisibleImageView.clearCache()
+                        sst.show()
+                    }
+                    attachedObjects: [
+                        WebView {
+                            id: invisibleWebview
+                        },
+                        WebImageView {
+                            id: invisibleImageView
+                        },
+                        SystemToast {
+                            id: sst
+                            body: qsTr("Cache Cleared")
+                            
+                        }
+                    ]
+                }
+            }
+            
             Divider {
                 topMargin: 50
                 opacity: 0.1
             }
+            
+            
         }
     }
 }

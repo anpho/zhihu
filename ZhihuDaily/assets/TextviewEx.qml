@@ -139,6 +139,16 @@ Page {
                 _app.shareTXT(weburl, webtitle, cc);
             }
             imageSource: "asset:///icon/ic_notes.png"
+        },ActionItem {
+            title: qsTr("Web View")
+            ActionBar.placement: ActionBarPlacement.OnBar
+            imageSource: "asset:///icon/ic_browser.png"
+            onTriggered: {
+                var webviewer = Qt.createComponent("webviewEx.qml").createObject(nav);
+                webviewer.nav = nav;
+                webviewer.id = id;
+                nav.push(webviewer);
+            }
         },
         ActionItem {
             title: qsTr("Comments")
@@ -151,17 +161,7 @@ Page {
                 nav.push(commentsReader);
             }
             imageSource: "asset:///icon/ic_feedback.png"
-        },
-        ActionItem {
-            title: qsTr("Web View")
-            ActionBar.placement: ActionBarPlacement.Signature
-            imageSource: "asset:///icon/ic_browser.png"
-            onTriggered: {
-                var webviewer = Qt.createComponent("webviewEx.qml").createObject(nav);
-                webviewer.nav = nav;
-                webviewer.id = id;
-                nav.push(webviewer);
-            }
         }
+        
     ]
 }

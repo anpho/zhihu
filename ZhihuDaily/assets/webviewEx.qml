@@ -146,18 +146,8 @@ Page {
             imageSource: "asset:///icon/ic_open.png"
         },
         ActionItem {
-            title: qsTr("Remember")
-            ActionBar.placement: ActionBarPlacement.OnBar
-            onTriggered: {
-                sst.body = qsTr("Processing content, please wait. \r\nRemember will show up if the content is not too long.");
-                sst.show();
-                _app.shareHTML(webv.url, webv.title, webcontent);
-            }
-            imageSource: "asset:///icon/ic_notes.png"
-        },
-        ActionItem {
             title: qsTr("Comments")
-            ActionBar.placement: ActionBarPlacement.Signature
+            ActionBar.placement: ActionBarPlacement.OnBar
             onTriggered: {
                 var commentsReader = Qt.createComponent("comments.qml").createObject(nav);
                 commentsReader.articleid = id;
@@ -166,6 +156,17 @@ Page {
                 nav.push(commentsReader);
             }
             imageSource: "asset:///icon/ic_feedback.png"
+        },
+        ActionItem {
+            title: qsTr("Remember")
+            ActionBar.placement: ActionBarPlacement.OnBar
+            onTriggered: {
+                sst.body = qsTr("Processing content, please wait. \r\nRemember will show up if the content is not too long.");
+                sst.show();
+                _app.shareHTML(webv.url, webv.title, webcontent);
+            }
+            imageSource: "asset:///icon/ic_notes.png"
         }
+
     ]
 }

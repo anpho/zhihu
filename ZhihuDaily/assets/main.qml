@@ -197,10 +197,10 @@ NavigationPane {
 
                             }
                             horizontalAlignment: HorizontalAlignment.Fill
-                            leftPadding: 50.0
-                            rightPadding: 40.0
-                            topMargin: 40.0
-                            bottomMargin: 40.0
+                            leftPadding: 20.0
+                            rightPadding: 20.0
+                            topMargin: 20.0
+                            bottomMargin: 20.0
                             WebImageView {
                                 id: webimage
                                 verticalAlignment: VerticalAlignment.Center
@@ -252,10 +252,10 @@ NavigationPane {
                                 horizontalAlignment: HorizontalAlignment.Fill
                                 verticalAlignment: VerticalAlignment.Bottom
                                 background: Color.create("#93000000")
-                                leftPadding: 10.0
-                                rightPadding: 10.0
-                                topPadding: 10.0
-                                bottomPadding: 10.0
+                                leftPadding: 20.0
+                                rightPadding: 20.0
+                                topPadding: 20.0
+                                bottomPadding: 20.0
                                 Label {
                                     text: ListItemData.title
                                     multiline: true

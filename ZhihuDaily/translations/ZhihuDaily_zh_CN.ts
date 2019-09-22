@@ -55,12 +55,12 @@ Remember will show up if the content is not too long.</source>
         <translation type="obsolete">正在处理内容，请稍等。如果长时间无反应，则可能是内容长度超出Remember限制。</translation>
     </message>
     <message>
-        <location filename="../assets/TextviewEx.qml" line="144"/>
+        <location filename="../assets/TextviewEx.qml" line="154"/>
         <source>Comments</source>
         <translation>查看评论</translation>
     </message>
     <message>
-        <location filename="../assets/TextviewEx.qml" line="156"/>
+        <location filename="../assets/TextviewEx.qml" line="143"/>
         <source>Web View</source>
         <translation>网页模式</translation>
     </message>
@@ -222,54 +222,74 @@ Remember will show up if the content is not too long.</source>
 <context>
     <name>settings</name>
     <message>
-        <location filename="../assets/settings.qml" line="10"/>
+        <location filename="../assets/settings.qml" line="12"/>
         <source>Visual Style</source>
         <translation>应用外观</translation>
     </message>
     <message>
-        <location filename="../assets/settings.qml" line="29"/>
+        <location filename="../assets/settings.qml" line="31"/>
         <source>Use Dark Theme</source>
         <translation>使用暗调主题</translation>
     </message>
     <message>
-        <location filename="../assets/settings.qml" line="49"/>
+        <location filename="../assets/settings.qml" line="51"/>
         <source>Web Viewer Settings</source>
         <translation>网页选项</translation>
     </message>
     <message>
-        <location filename="../assets/settings.qml" line="68"/>
+        <location filename="../assets/settings.qml" line="70"/>
         <source>Show Images</source>
         <translation>显示图片</translation>
     </message>
     <message>
-        <location filename="../assets/settings.qml" line="83"/>
+        <location filename="../assets/settings.qml" line="85"/>
         <source>FrontPage Style</source>
         <translation>首页风格</translation>
     </message>
     <message>
-        <location filename="../assets/settings.qml" line="91"/>
+        <location filename="../assets/settings.qml" line="93"/>
         <source>Choose the style of zhihu frontpage. Please be aware that this will take effect on next app start.</source>
         <translation>选择知乎日报的首页列表风格。请注意：此选项需要重启应用后才能生效。</translation>
     </message>
     <message>
-        <location filename="../assets/settings.qml" line="97"/>
+        <location filename="../assets/settings.qml" line="99"/>
         <source>Grid Layout</source>
         <translation>方格</translation>
     </message>
     <message>
-        <location filename="../assets/settings.qml" line="98"/>
+        <location filename="../assets/settings.qml" line="100"/>
         <source>Default layout, better for larger devices.</source>
         <translation>默认布局，推荐大屏幕设备使用。</translation>
     </message>
     <message>
-        <location filename="../assets/settings.qml" line="104"/>
+        <location filename="../assets/settings.qml" line="106"/>
         <source>List Layout</source>
         <translation>列表</translation>
     </message>
     <message>
-        <location filename="../assets/settings.qml" line="105"/>
+        <location filename="../assets/settings.qml" line="107"/>
         <source>Official app style.</source>
         <translation>官方app样式。</translation>
+    </message>
+    <message>
+        <location filename="../assets/settings.qml" line="121"/>
+        <source>Cache Management</source>
+        <translation>缓存管理</translation>
+    </message>
+    <message>
+        <location filename="../assets/settings.qml" line="130"/>
+        <source>Press the button below to clean the cache files.</source>
+        <translation>点击以下按钮来清空app缓存。</translation>
+    </message>
+    <message>
+        <location filename="../assets/settings.qml" line="134"/>
+        <source>Purge Cache</source>
+        <translation>清空缓存</translation>
+    </message>
+    <message>
+        <location filename="../assets/settings.qml" line="151"/>
+        <source>Cache Cleared</source>
+        <translation>缓存已清空</translation>
     </message>
     <message>
         <source>Please restart this app to change layout.</source>
@@ -289,12 +309,12 @@ Remember will show up if the content is not too long.</source>
         <translation>放大</translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="149"/>
+        <location filename="../assets/webviewEx.qml" line="161"/>
         <source>Remember</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="152"/>
+        <location filename="../assets/webviewEx.qml" line="164"/>
         <source>Processing content, please wait. 
 Remember will show up if the content is not too long.</source>
         <translation type="unfinished"></translation>
@@ -305,7 +325,7 @@ Remember will show up if the content is not too long.</source>
         <translation type="obsolete">正在处理内容，请稍等。如果长时间无反应，则可能是内容长度超出Remember限制。</translation>
     </message>
     <message>
-        <location filename="../assets/webviewEx.qml" line="159"/>
+        <location filename="../assets/webviewEx.qml" line="149"/>
         <source>Comments</source>
         <translation>查看评论</translation>
     </message>

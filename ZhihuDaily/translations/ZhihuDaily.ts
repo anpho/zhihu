@@ -184,6 +184,22 @@ Remember will show up if the content is not too long.</source>
         <source>Official app style.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Cache Management</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Press the button below to clean the cache files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Purge Cache</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cache Cleared</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>webviewEx</name>
